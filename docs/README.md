@@ -55,3 +55,29 @@ plugins: [
   '~/plugins/r64components'
 ],
 ```
+
+### Customization
+
+If you want to override the look and feel of the components you just need to override the default theme classes. Change only the one you need.
+
+Each component can be customized under their component name as a key.
+
+```javascript
+// main.js
+import R64Components from 'r64components'
+
+const customTheme = {
+  R64Button: {
+    // Note that this will override the entire baseClass.
+    // So if you want to keep some default values you'll need to paste them here
+    baseClass: "block rounded-lg inline-flex items-center justify-center transition duration-150 ease-in-out",
+    primaryClass: "bg-purple-600 text-white hover:bg-purple-700",
+  }
+}
+
+Vue.use(R64Components, customTheme)
+```
+
+
+
+For better reusability and organization we encourage to have your custom theme in a file and import it :ok_hand:
