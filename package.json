@@ -1,5 +1,5 @@
 {
-  "name": "r64components",
+  "name": "@64robots/r64components",
   "version": "0.1.22",
   "private": true,
   "main": "dist/index.common.js",
