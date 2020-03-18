@@ -1,8 +1,14 @@
 {
   "name": "@64robots/r64components",
   "version": "0.1.22",
-  "private": false,
+  "description": "Set of customizable components made with Tailwindcss",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/64robots/r64components"
+  },
   "main": "dist/index.common.js",
+  "private": false,
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build src/index.js --target lib --name index --dest dist/",
