@@ -1,6 +1,7 @@
 {
   "name": "@64robots/r64components",
   "version": "0.1.22",
+  "private": false,
   "main": "dist/index.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
