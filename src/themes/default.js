@@ -12,6 +12,6 @@ const defaultTheme = {
   R64Select,
 };
 
-export { R64Button, R64Checkbox, R64Input, R64Select, R64Radio, };
+export { R64Button, R64Checkbox, R64Input, R64Select, R64Radio };
 
 export default defaultTheme

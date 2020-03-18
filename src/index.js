@@ -23,15 +23,21 @@ const extendComponent = (Vue, theme, component) => {
     props[key] = prop
   })
 
-  return Vue.extend({ ...components[component], ...props })
+  return Vue.extend({ ...components[component], ...{ props } })
 }
 
-const install = (Vue, args = {}) => {
-  const currentTheme = { ...defaultTheme, ...args }
-  Object.keys(components).forEach(component => {
-    Vue.component(component, extendComponent(Vue, currentTheme[component], component))
-  })
-}
 
-export { R64Button }
-export default { install }
+export default {
+  install(Vue, args = {}) {
+    if (this.installed) return;
+    this.installed = true;
+
+    const currentTheme = { ...defaultTheme, ...args };
+    Object.keys(components).forEach(component => {
+      Vue.component(
+        component,
+        extendComponent(Vue, currentTheme[component], component)
+      );
+    });
+  }
+};

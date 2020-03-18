@@ -32,7 +32,7 @@
 import formInput from "../mixins/formInput";
 
 export default {
-  name: "R64FormSelect",
+  name: "R64Select",
 
   mixins: [formInput],
 

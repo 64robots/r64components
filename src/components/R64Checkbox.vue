@@ -19,6 +19,8 @@
 import formInput from '../mixins/formInput'
 
 export default {
+  name: "R64Checkbox",
+
   mixins: [formInput],
 
   props: {

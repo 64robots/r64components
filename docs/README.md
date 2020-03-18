@@ -58,7 +58,7 @@ plugins: [
 
 ### Customization
 
-If you want to override the look and feel of the components you just need to override the default theme classes. Change only the one you need.
+If you want to overwrite the components look and feel you just need to set your custom classes. Change only the one you need, the other classes will take the default values.
 
 Each component can be customized under their component name as a key.
 
@@ -77,7 +77,6 @@ const customTheme = {
 
 Vue.use(R64Components, customTheme)
 ```
-
 
 
 For better reusability and organization we encourage to have your custom theme in a file and import it :ok_hand:
