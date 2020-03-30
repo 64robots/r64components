@@ -3,6 +3,7 @@
     <label class="inline-flex items-center">
       <input
         type="checkbox"
+        v-bind="$attrs"
         :class="formInputClasses"
         :disabled="disabled"
         :checked="value"

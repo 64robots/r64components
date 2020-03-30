@@ -215,6 +215,105 @@ export default {
 };
 ```
 
+## R64Textarea
+### Basic example
+
+```html
+<R64Textarea>Primary input</R64Textarea>
+<R64Textarea secondary>Secondary input</R64Textarea>
+<R64Textarea error error-message="This field is required">Error input</R64Textarea>
+<R64Textarea disabled>Disabled input</R64Textarea>
+```
+
+### Validation example
+
+If you are working with a validation library that has an `$error` and `$dirty` property like vuelidate you can pass the validator as a prop
+
+```javascript
+<R64Textarea
+  v-model="profile.message"
+  label="Message"
+  :v="$v.profile.message"
+  error-message="The message introduced is too short"
+/>
+// in your validations
+validations: {
+  profile: {
+    message: {
+      required,
+      minLength: minLength(4)
+    },
+  },
+}
+
+```
+
+If you use vee-validate you can also use the `error` prop
+
+```javascript
+<validation-provider rules="required" v-slot="{ errors, invalid, dirty }">
+  <R64Textarea
+  v-model="profile.message"
+  label="Message"
+  :error="invalid && dirty"
+  :error-message="errors[0]"
+/>
+</validation-provider>
+```
+
+And if you are using another validator you can use the error prop as a flag to turn it on and off
+
+### Events
+
+| Event   | Payload                  |
+| ------- | ------------------------ |
+| blur    | event                    |
+| focus   | event                    |
+| input   | String (new input value) |
+| keydown | event                    |
+| keyup   | event                    |
+
+### Props
+
+| Property     | Type             | Default value | Required |
+| ------------ | ---------------- | ------------- | -------- |
+| id           | String           | null          | false    |
+| label        | String           | null          | false    |
+| type         | String           | text          | false    |
+| secondary    | Boolean          | false         | false    |
+| help         | String           | ""            | false    |
+| placeholder  | [String, Number] | ""            | false    |
+| v            | Object           | null          | false    |
+| errorMessage | String           | ""            | false    |
+
+### Class style props
+
+- wrapperClass
+- labelClass
+- baseClas
+- primaryClass
+- secondaryClass
+- errorClass
+- disabledClass
+- errorMessageClass
+- helpMessageClass
+
+### Default theme settings
+
+```javascript
+export default {
+  wrapperClass: "mb-1 h-32",
+  labelClass: "block leading-tight text-gray-800",
+  baseClass: "leading-snug outline-none mt-1 px-3 py-2 block w-full text-gray-900 rounded-md focus:shadow-outline focus:border-blue-400",
+  primaryClass: "border border-gray-400 placeholder-gray-600",
+  secondaryClass: "border border-indigo-300 placeholder-indigo-400",
+  errorClass: "border border-red-600 placeholder-red-400",
+  disabledClass: "border border-gray-400 bg-gray-100 text-gray-900 cursor-not-allowed opacity-50",
+  helpMessageClass: "mt-1 text-sm text-gray-600",
+  errorMessageClass: "mt-1 text-sm text-red-500"
+};
+```
+
 ## R64Radio
 ### Basic example
 

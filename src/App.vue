@@ -42,6 +42,12 @@
               :v="$v.profile.notifications"
               error-message="Can't be blank"
             />
+            <R64Textarea
+              v-model="profile.message"
+              label="Message"
+              :v="$v.profile.message"
+              error-message="Can't be blank"
+            />
             <R64Checkbox label="Comments" v-model="profile.comments" />
             <R64Checkbox label="Candidates" v-model="profile.candidates" />
             <div>
@@ -119,6 +125,13 @@
               error-message="Can't be blank"
               secondary
             />
+            <R64Textarea
+              v-model="profile.message"
+              label="Message"
+              :v="$v.profile.message"
+              error-message="Can't be blank"
+              secondary
+            />
             <R64Checkbox label="Comments" v-model="secondaryProfile.comments" secondary />
             <R64Checkbox label="Candidates" v-model="secondaryProfile.candidates" secondary />
             <div>
@@ -166,6 +179,7 @@ import R64Input from "@/components/R64Input";
 import R64Select from "@/components/R64Select";
 import R64Checkbox from "@/components/R64Checkbox";
 import R64Radio from "@/components/R64Radio";
+import R64Textarea from "@/components/R64Textarea"
 
 export default {
   name: "app",
@@ -175,7 +189,8 @@ export default {
     R64Input,
     R64Select,
     R64Checkbox,
-    R64Radio
+    R64Radio,
+    R64Textarea,
   },
 
   data() {
@@ -185,6 +200,7 @@ export default {
         lastName: "",
         country: "",
         email: "",
+        message: "",
         notifications: 'weekly',
         comments: false,
         candidates: true,
@@ -196,6 +212,7 @@ export default {
         lastName: "",
         country: "",
         email: "",
+        message: "",
         notifications: 'weekly',
         comments: false,
         candidates: true,
@@ -235,6 +252,7 @@ export default {
       lastName: { required },
       country: { required },
       email: { email },
+      message: { required },
       schedule: { required },
       terms: { checked: value => !!value }
     },

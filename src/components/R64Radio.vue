@@ -3,6 +3,7 @@
     <label class="inline-flex items-center">
       <input
         type="radio"
+        v-bind="$attrs"
         :class="formInputClasses"
         :name="name"
         :value="value"

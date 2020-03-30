@@ -11,6 +11,7 @@ Looking forward to see your feedback.
 - [x] R64Button
 - [x] R64Checkbox
 - [x] R64Input
+- [x] R64Textarea
 - [x] R64Radio
 - [x] R64Select
 
