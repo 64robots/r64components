@@ -6,6 +6,7 @@
     <select
       ref="select"
       v-model="localValue"
+      v-bind="$attrs"
       :class="formInputClasses"
       :disabled="disabled"
       :name="name"

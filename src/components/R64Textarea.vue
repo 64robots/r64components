@@ -3,13 +3,12 @@
     <label :for="inputId" :class="classes.label">
       {{ label }}
     </label>
-    <input
-      :id="inputId"
-      :ref="inputId"
+    <textarea
+      :id="textareaId"
+      :ref="textareaId"
       v-model="localValue"
       v-bind="$attrs"
       :class="formInputClasses"
-      :type="internalType"
       :placeholder="placeholder"
       :disabled="disabled"
       @blur="onBlur"
@@ -28,7 +27,7 @@
 import formInput from '../mixins/formInput'
 
 export default {
-  name: "R64Input",
+  name: "R64Textarea",
 
   mixins: [formInput],
 
@@ -81,21 +80,12 @@ export default {
   },
 
   computed: {
-    inputId() {
+    textareaId() {
       if (this.id) {
         return this.id;
       }
 
       return this._uid;
-    },
-
-    internalType() {
-      const textTypes = ["date", "phone", "email"];
-      if (textTypes.includes(this.type)) {
-        return "text";
-      }
-
-      return this.type;
     },
 
     hasFeedback() {
