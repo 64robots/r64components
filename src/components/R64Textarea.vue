@@ -88,14 +88,6 @@ export default {
       return this._uid;
     },
 
-    hasError() {
-      if (this.v) {
-        return this.v.$error && this.v.$dirty && !this.typing
-      }
-
-      return this.error && !this.typing;
-    },
-
     hasFeedback() {
       return this.hasError || this.help;
     },
