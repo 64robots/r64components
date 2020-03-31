@@ -16,7 +16,7 @@
       @input="onInput"
       @keydown="isTyping"
       @keyup="onKeyUp"
-    />
+    ></textarea>
     <p v-if="hasFeedback" :class="feedbackClass">
       {{ feedback }}
     </p>

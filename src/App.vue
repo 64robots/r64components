@@ -126,9 +126,9 @@
               secondary
             />
             <R64Textarea
-              v-model="profile.message"
+              v-model="secondaryProfile.message"
               label="Message"
-              :v="$v.profile.message"
+              :v="$v.secondaryProfile.message"
               error-message="Can't be blank"
               secondary
             />
@@ -264,6 +264,7 @@ export default {
       lastName: { required },
       country: { required },
       email: { email },
+      message: { required },
       schedule: { required },
       terms: { checked: value => !!value }
     }
