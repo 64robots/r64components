@@ -168,7 +168,7 @@ export default {
   }
 };
 </script>
-<style scoped>
+<style>
 .loader,
 .loader:after {
   display: block;

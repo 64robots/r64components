@@ -53,7 +53,7 @@ export default {
   }
 };
 </script>
-<style scoped>
+<style>
 input[type="radio"]:checked {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='3'/%3E%3C/svg%3E");
   border-color: transparent;
