@@ -1,6 +1,7 @@
 import R64Button from './components/R64Button'
 import R64Checkbox from './components/R64Checkbox'
 import R64Input from './components/R64Input'
+import R64Textarea from './components/R64Textarea'
 import R64Radio from './components/R64Radio'
 import R64Select from './components/R64Select'
 import defaultTheme from './themes/default.js'
@@ -11,6 +12,7 @@ const components = {
   R64Input,
   R64Radio,
   R64Select,
+  R64Textarea,
 };
 
 const extendComponent = (Vue, theme, component) => {

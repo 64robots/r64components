@@ -3169,6 +3169,183 @@ var R64Input_component = normalizeComponent(
 )
 
 /* harmony default export */ var components_R64Input = (R64Input_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5138d50a-vue-loader-template"}!./node_modules/@vue/cli-service/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader/lib??vue-loader-options!./src/components/R64Textarea.vue?vue&type=template&id=05d7f8dc&
+var R64Textareavue_type_template_id_05d7f8dc_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:[_vm.classes.wrapper]},[_c('label',{class:_vm.classes.label,attrs:{"for":_vm.inputId}},[_vm._v(" "+_vm._s(_vm.label)+" ")]),_c('textarea',_vm._b({directives:[{name:"model",rawName:"v-model",value:(_vm.localValue),expression:"localValue"}],ref:_vm.textareaId,class:_vm.formInputClasses,attrs:{"id":_vm.textareaId,"placeholder":_vm.placeholder,"disabled":_vm.disabled},domProps:{"value":(_vm.localValue)},on:{"blur":_vm.onBlur,"focus":_vm.onFocus,"input":[function($event){if($event.target.composing){ return; }_vm.localValue=$event.target.value},_vm.onInput],"keydown":_vm.isTyping,"keyup":_vm.onKeyUp}},'textarea',_vm.$attrs,false)),(_vm.hasFeedback)?_c('p',{class:_vm.feedbackClass},[_vm._v(" "+_vm._s(_vm.feedback)+" ")]):_vm._e()])}
+var R64Textareavue_type_template_id_05d7f8dc_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/R64Textarea.vue?vue&type=template&id=05d7f8dc&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/@vue/cli-plugin-babel/node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader/lib??vue-loader-options!./src/components/R64Textarea.vue?vue&type=script&lang=js&
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var R64Textareavue_type_script_lang_js_ = ({
+  name: "R64Textarea",
+  mixins: [formInput],
+  props: {
+    id: {
+      type: String,
+      default: null
+    },
+    label: {
+      type: String,
+      default: null
+    },
+    type: {
+      type: String,
+      default: "text"
+    },
+    value: {
+      type: [String, Number],
+      default: ""
+    },
+    secondary: {
+      type: Boolean,
+      default: false
+    },
+    help: {
+      type: String,
+      default: ""
+    },
+    placeholder: {
+      type: [String, Number],
+      default: ""
+    },
+    v: {
+      type: Object,
+      default: null
+    },
+    errorMessage: {
+      type: String,
+      default: ""
+    }
+  },
+  data: function data() {
+    return {
+      hasInput: false,
+      localValue: this.value,
+      typing: false,
+      focus: this.disabled
+    };
+  },
+  computed: {
+    textareaId: function textareaId() {
+      if (this.id) {
+        return this.id;
+      }
+
+      return this._uid;
+    },
+    hasFeedback: function hasFeedback() {
+      return this.hasError || this.help;
+    },
+    feedback: function feedback() {
+      if (this.hasError) {
+        return this.errorMessage;
+      }
+
+      return this.help;
+    },
+    feedbackClass: function feedbackClass() {
+      return this.hasError ? this.classes.errorMessage : this.classes.helpMessage;
+    }
+  },
+  watch: {
+    value: function value(newVal) {
+      this.localValue = newVal;
+    },
+    localValue: function localValue(newVal, oldVal) {
+      if (newVal !== oldVal) {
+        this.$emit("input", newVal);
+      }
+    }
+  },
+  destroyed: function destroyed() {
+    clearTimeout(this.typing);
+  },
+  methods: {
+    onBlur: function onBlur(event) {
+      this.focus = false;
+      this.$emit("blur", event);
+    },
+    onFocus: function onFocus(event) {
+      this.focus = true;
+      this.$emit("focus", event);
+    },
+    onInput: function onInput() {
+      this.hasInput = this.localValue.length;
+    },
+    onKeyUp: function onKeyUp(event) {
+      this.$emit('keyup', event);
+    },
+    isTyping: function isTyping(event) {
+      var _this = this;
+
+      this.$emit('keydown', event);
+      if (event.key === 'Tab') return;
+
+      if (this.typing) {
+        clearTimeout(this.typing);
+      }
+
+      var id = setTimeout(function () {
+        _this.typing = false;
+
+        if (_this.v && _this.hasInput) {
+          _this.v.$touch();
+        }
+      }, 750);
+      this.typing = id;
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/R64Textarea.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_R64Textareavue_type_script_lang_js_ = (R64Textareavue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/R64Textarea.vue
+
+
+
+
+
+/* normalize component */
+
+var R64Textarea_component = normalizeComponent(
+  components_R64Textareavue_type_script_lang_js_,
+  R64Textareavue_type_template_id_05d7f8dc_render,
+  R64Textareavue_type_template_id_05d7f8dc_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var components_R64Textarea = (R64Textarea_component.exports);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5138d50a-vue-loader-template"}!./node_modules/@vue/cli-service/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader/lib??vue-loader-options!./src/components/R64Radio.vue?vue&type=template&id=5641bf3a&scoped=true&
 var R64Radiovue_type_template_id_5641bf3a_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:_vm.classes.wrapper},[_c('label',{staticClass:"inline-flex items-center"},[_c('input',_vm._b({class:_vm.formInputClasses,attrs:{"type":"radio","name":_vm.name,"disabled":_vm.disabled},domProps:{"value":_vm.value,"checked":_vm.checked},on:{"click":function($event){return _vm.$emit('click', _vm.radioValue)}}},'input',_vm.$attrs,false)),_c('span',{class:_vm.labelClass},[_vm._v(_vm._s(_vm.label))])]),(_vm.hasError)?_c('p',{class:_vm.classes.errorMessage},[_vm._v(_vm._s(_vm.errorMessage))]):_vm._e()])}
 var R64Radiovue_type_template_id_5641bf3a_scoped_true_staticRenderFns = []
@@ -3400,12 +3577,14 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 
+
 var components = {
   R64Button: components_R64Button,
   R64Checkbox: components_R64Checkbox,
   R64Input: components_R64Input,
   R64Radio: components_R64Radio,
-  R64Select: components_R64Select
+  R64Select: components_R64Select,
+  R64Textarea: components_R64Textarea
 };
 
 var src_extendComponent = function extendComponent(Vue, theme, component) {
