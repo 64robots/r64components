@@ -5,7 +5,7 @@ export default {
   errorClass: "bg-red-500 text-white hover:bg-red-500",
   disabledClass: "opacity-50 pointer-events-none",
   outlineClass:
-    "border bg-transparent text-black transition duration-150 ease-in-out",
+    "border bg-transparent transition duration-150 ease-in-out",
   primaryOutlineClass:
     "border-gray-900 text-gray-900 hover:bg-gray-800 hover:text-white",
   secondaryOutlineClass:

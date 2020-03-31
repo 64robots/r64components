@@ -11,7 +11,7 @@
         :disabled="disabled"
         @click="$emit('click', radioValue)"
       />
-      <span :class="labelClass">{{ label }}</span>
+      <span :class="classes.label">{{ label }}</span>
     </label>
     <p v-if="hasError" :class="classes.errorMessage">{{ errorMessage }}</p>
   </div>
