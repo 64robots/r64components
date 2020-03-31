@@ -2762,7 +2762,7 @@ var R64Checkboxvue_type_template_id_dd53b876_staticRenderFns = []
 });
 // CONCATENATED MODULE: ./src/themes/default/R64Textarea.js
 /* harmony default export */ var R64Textarea = ({
-  wrapperClass: "mb-1 h-32",
+  wrapperClass: "mb-1 h-auto",
   labelClass: "block leading-tight text-gray-800",
   baseClass: "leading-snug outline-none mt-1 px-3 py-2 block w-full text-gray-900 rounded-md focus:shadow-outline focus:border-blue-400",
   primaryClass: "border border-gray-400 placeholder-gray-600",

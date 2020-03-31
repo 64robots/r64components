@@ -1,5 +1,5 @@
 export default {
-  wrapperClass: "mb-1 h-32",
+  wrapperClass: "mb-1 h-auto",
   labelClass: "block leading-tight text-gray-800",
   baseClass:
     "leading-snug outline-none mt-1 px-3 py-2 block w-full text-gray-900 rounded-md focus:shadow-outline focus:border-blue-400",
