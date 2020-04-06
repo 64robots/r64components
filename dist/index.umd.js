@@ -2411,12 +2411,12 @@ function _defineProperty(obj, key, value) {
 
   return obj;
 }
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5138d50a-vue-loader-template"}!./node_modules/@vue/cli-service/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader/lib??vue-loader-options!./src/components/R64Button.vue?vue&type=template&id=1118b630&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',{class:_vm.buttonClasses,attrs:{"type":_vm.type},on:{"click":_vm.onClick,"blur":_vm.onBlur,"focus":_vm.onFocus}},[(!_vm.busy)?_vm._t("default"):_c('div',{staticClass:"loader"})],2)}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5138d50a-vue-loader-template"}!./node_modules/@vue/cli-service/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader/lib??vue-loader-options!./src/components/R64Button.vue?vue&type=template&id=9d8efdf2&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c(_vm.componentTag,{tag:"component",class:_vm.buttonClasses,attrs:{"type":_vm.type,"to":_vm.to},on:{"click":_vm.onClick,"blur":_vm.onBlur,"focus":_vm.onFocus}},[(!_vm.busy)?_vm._t("default"):_c('div',{staticClass:"loader"})],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/R64Button.vue?vue&type=template&id=1118b630&
+// CONCATENATED MODULE: ./src/components/R64Button.vue?vue&type=template&id=9d8efdf2&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.small.js
 var es_string_small = __webpack_require__("c96a");
@@ -2536,6 +2536,10 @@ var baseClass = R64Button.baseClass,
     normalSizeClass: {
       type: String,
       default: normalSizeClass
+    },
+    to: {
+      type: [String, Object],
+      default: null
     }
   },
   computed: {
@@ -2582,6 +2586,19 @@ var baseClass = R64Button.baseClass,
     },
     normalSize: function normalSize() {
       return !this.small;
+    },
+    haveRouterLinkComponent: function haveRouterLinkComponent() {
+      return !!(this.$options.components.RouterLink || this.$options.components.NuxtLink);
+    },
+    componentTag: function componentTag() {
+      // eslint-disable-next-line
+      console.log('haveRouterLinkComponent', this.haveRouterLinkComponent);
+
+      if (this.to && this.haveRouterLinkComponent) {
+        return this.$options.components.NuxtLink || this.$options.components.RouterLink;
+      }
+
+      return 'button';
     }
   },
   methods: {

@@ -1,8 +1,8 @@
 <template>
-  <button :class="buttonClasses" :type="type" @click="onClick" @blur="onBlur" @focus="onFocus">
+  <component :is="componentTag" :class="buttonClasses" :type="type" @click="onClick" @blur="onBlur" @focus="onFocus" :to="to">
     <slot v-if="!busy" />
     <div v-else class="loader" />
-  </button>
+  </component>
 </template>
 
 <script>
@@ -102,7 +102,11 @@ export default {
     normalSizeClass: {
       type: String,
       default: normalSizeClass
-    }
+    },
+    to: {
+      type: [String, Object],
+      default: null,
+    },
   },
 
   computed: {
@@ -150,6 +154,20 @@ export default {
 
     normalSize() {
       return !this.small;
+    },
+
+    haveRouterLinkComponent() {
+      return !!(this.$options.components.RouterLink || this.$options.components.NuxtLink)
+    },
+
+    componentTag() {
+      // eslint-disable-next-line
+      console.log('haveRouterLinkComponent', this.haveRouterLinkComponent)
+      if (this.to && this.haveRouterLinkComponent) {
+        return this.$options.components.NuxtLink || this.$options.components.RouterLink;
+      }
+
+      return 'button'
     }
   },
 
