@@ -17,11 +17,7 @@
       <option v-if="placeholder" :value="null">
         {{ placeholder }}
       </option>
-      <option
-        v-for="option in options"
-        :key="option.value"
-        :value="option.value"
-      >
+      <option v-for="option in options" :key="option.value" :value="option.value">
         {{ option.label }}
       </option>
     </select>
@@ -30,76 +26,76 @@
 </template>
 
 <script>
-import formInput from "../mixins/formInput";
+import formInput from '../mixins/formInput'
 
 export default {
-  name: "R64Select",
+  name: 'R64Select',
 
   mixins: [formInput],
 
   props: {
     label: {
       type: String,
-      default: null
+      default: null,
     },
     name: {
       type: String,
-      default: "r64-select"
+      default: 'r64-select',
     },
     placeholder: {
       type: [String, Number],
-      default: null
+      default: null,
     },
     options: {
       type: Array,
-      required: true
+      required: true,
     },
     value: {
       type: [Date, String, Number],
-      default: ""
+      default: '',
     },
     secondary: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
 
   data() {
     return {
       localValue: this.value,
-      rawValue: this.value
-    };
+      rawValue: this.value,
+    }
   },
 
   watch: {
     value(newVal) {
-      this.localValue = newVal;
+      this.localValue = newVal
     },
 
     localValue(newVal, oldVal) {
       if (newVal !== oldVal) {
         if (this.v) this.v.$touch()
-        this.$emit("input", newVal);
+        this.$emit('input', newVal)
       }
-    }
+    },
   },
 
   methods: {
     onChange(event) {
-      this.localValue = event.target.value;
-      this.$emit("change", event.target.value);
+      this.localValue = event.target.value
+      this.$emit('change', event.target.value)
     },
 
     onClick() {
       const isFocused =
         document.activeElement === this.$refs.select ||
-        document.activeElement === this.$refs.select.$el;
+        document.activeElement === this.$refs.select.$el
       if (isFocused) {
-        this.$emit("focus", event);
+        this.$emit('focus', event)
       }
-    }
-  }
-};
+    },
+  },
+}
 </script>
 <style>
 select {

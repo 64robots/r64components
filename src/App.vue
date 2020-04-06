@@ -48,17 +48,20 @@
               :v="$v.profile.message"
               error-message="Can't be blank"
             />
-            <R64Checkbox label="Comments" v-model="profile.comments" />
-            <R64Checkbox label="Candidates" v-model="profile.candidates" />
+            <R64Checkbox
+label="Comments"
+v-model="profile.comments" />
+            <R64Checkbox
+label="Candidates"
+v-model="profile.candidates" />
             <div>
               <p class="mb-4">Get notified by sms</p>
               <div class="flex">
                 <R64Radio
-                  name="sms"
-                  v-model="profile.sms"
-                  :radioValue="true"
-                  label="Yes"
-                />
+name="sms"
+v-model="profile.sms"
+:radioValue="true"
+label="Yes" />
                 <R64Radio
                   name="sms"
                   class="ml-8"
@@ -132,8 +135,14 @@
               error-message="Can't be blank"
               secondary
             />
-            <R64Checkbox label="Comments" v-model="secondaryProfile.comments" secondary />
-            <R64Checkbox label="Candidates" v-model="secondaryProfile.candidates" secondary />
+            <R64Checkbox
+label="Comments"
+v-model="secondaryProfile.comments"
+secondary />
+            <R64Checkbox
+label="Candidates"
+v-model="secondaryProfile.candidates"
+secondary />
             <div>
               <p class="mb-4">Get notified by sms</p>
               <div class="flex">
@@ -163,8 +172,12 @@
             />
           </div>
           <div class="max-w-sm flex justify-between mt-12">
-            <R64Button outline secondary>Back</R64Button>
-            <R64Button :disabled="$v.secondaryProfile.$invalid" secondary>Submit</R64Button>
+            <R64Button
+outline
+secondary>Back</R64Button>
+            <R64Button
+:disabled="$v.secondaryProfile.$invalid"
+secondary>Submit</R64Button>
           </div>
         </div>
       </div>
@@ -173,16 +186,16 @@
 </template>
 
 <script>
-import { required, minLength, email } from "vuelidate/lib/validators";
-import R64Button from "@/components/R64Button";
-import R64Input from "@/components/R64Input";
-import R64Select from "@/components/R64Select";
-import R64Checkbox from "@/components/R64Checkbox";
-import R64Radio from "@/components/R64Radio";
-import R64Textarea from "@/components/R64Textarea"
+import { required, minLength, email } from 'vuelidate/lib/validators'
+import R64Button from '@/components/R64Button'
+import R64Input from '@/components/R64Input'
+import R64Select from '@/components/R64Select'
+import R64Checkbox from '@/components/R64Checkbox'
+import R64Radio from '@/components/R64Radio'
+import R64Textarea from '@/components/R64Textarea'
 
 export default {
-  name: "app",
+  name: 'app',
 
   components: {
     R64Button,
@@ -196,78 +209,78 @@ export default {
   data() {
     return {
       profile: {
-        name: "",
-        lastName: "",
-        country: "",
-        email: "",
-        message: "",
+        name: '',
+        lastName: '',
+        country: '',
+        email: '',
+        message: '',
         notifications: 'weekly',
         comments: false,
         candidates: true,
         sms: false,
-        terms: false
+        terms: false,
       },
       secondaryProfile: {
-        name: "",
-        lastName: "",
-        country: "",
-        email: "",
-        message: "",
+        name: '',
+        lastName: '',
+        country: '',
+        email: '',
+        message: '',
         notifications: 'weekly',
         comments: false,
         candidates: true,
         sms: false,
-        terms: false
+        terms: false,
       },
-    };
+    }
   },
 
   computed: {
     countries() {
       return [
-        { value: "spain", label: "Spain" },
-        { value: "us", label: "United States" },
-        { value: "morocco", label: "Morocco" },
-        { value: "slovakia", label: "Slovakia" },
-        { value: "ghana", label: "Ghana" },
-        { value: "brazil", label: "Brazil" }
-      ];
+        { value: 'spain', label: 'Spain' },
+        { value: 'us', label: 'United States' },
+        { value: 'morocco', label: 'Morocco' },
+        { value: 'slovakia', label: 'Slovakia' },
+        { value: 'ghana', label: 'Ghana' },
+        { value: 'brazil', label: 'Brazil' },
+      ]
     },
 
     schedule() {
       return [
-        { value: "daily", label: "Daily" },
-        { value: "weekly", label: "Weekly" },
-        { value: "monthly", label: "Montly" }
-      ];
-    }
+        { value: 'daily', label: 'Daily' },
+        { value: 'weekly', label: 'Weekly' },
+        { value: 'monthly', label: 'Montly' },
+      ]
+    },
   },
 
   validations: {
     profile: {
       name: {
         required,
-        minLength: minLength(4)
+        minLength: minLength(4),
       },
       lastName: { required },
       country: { required },
       email: { email },
       message: { required },
       schedule: { required },
-      terms: { checked: value => !!value }
+      terms: { checked: (value) => !!value },
     },
     secondaryProfile: {
       name: {
         required,
-        minLength: minLength(4)
+        minLength: minLength(4),
       },
       lastName: { required },
       country: { required },
       email: { email },
       message: { required },
       schedule: { required },
-      terms: { checked: value => !!value }
-    }
-  }
-};
+      terms: { checked: (value) => !!value },
+    },
+  },
+}
 </script>

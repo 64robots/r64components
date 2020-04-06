@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import R64ButtonClasses from "../themes/default/R64Button";
+import R64ButtonClasses from '../themes/default/R64Button'
 
 const {
   baseClass,
@@ -20,153 +20,159 @@ const {
   smallClass,
   fullClass,
   disabledClass,
-  normalSizeClass
-} = R64ButtonClasses;
+  normalSizeClass,
+} = R64ButtonClasses
 
 export default {
-  name: "R64Button",
+  name: 'R64Button',
 
   props: {
     type: {
       type: String,
-      default: "button"
+      default: 'button',
     },
     busy: {
       type: Boolean,
-      default: false
+      default: false,
     },
     disabled: {
       type: Boolean,
-      default: false
+      default: false,
     },
     secondary: {
       type: Boolean,
-      default: false
+      default: false,
     },
     error: {
       type: Boolean,
-      default: false
+      default: false,
     },
     outline: {
       type: Boolean,
-      default: false
+      default: false,
     },
     full: {
       type: Boolean,
-      default: false
+      default: false,
     },
     small: {
       type: Boolean,
-      default: false
+      default: false,
     },
     primaryClass: {
       type: String,
-      default: primaryClass
+      default: primaryClass,
     },
     secondaryClass: {
       type: String,
-      default: secondaryClass
+      default: secondaryClass,
     },
     errorClass: {
       type: String,
-      default: errorClass
+      default: errorClass,
     },
     outlineClass: {
       type: String,
-      default: outlineClass
+      default: outlineClass,
     },
     primaryOutlineClass: {
       type: String,
-      default: primaryOutlineClass
+      default: primaryOutlineClass,
     },
     secondaryOutlineClass: {
       type: String,
-      default: secondaryOutlineClass
+      default: secondaryOutlineClass,
     },
     errorOutlineClass: {
       type: String,
-      default: errorOutlineClass
+      default: errorOutlineClass,
     },
     smallClass: {
       type: String,
-      default: smallClass
+      default: smallClass,
     },
     fullClass: {
       type: String,
-      default: fullClass
+      default: fullClass,
     },
     disabledClass: {
       type: String,
-      default: disabledClass
+      default: disabledClass,
     },
     normalSizeClass: {
       type: String,
-      default: normalSizeClass
-    }
+      default: normalSizeClass,
+    },
   },
 
   computed: {
     buttonClasses() {
-      const classes = [baseClass];
+      const classes = [baseClass]
 
       // REFACTOR
       if (this.outline) {
-        classes.push(this.outlineClass);
+        classes.push(this.outlineClass)
         if (this.secondary) {
-          classes.push(this.secondaryOutlineClass);
-        } else if(this.error) {
+          classes.push(this.secondaryOutlineClass)
+        } else if (this.error) {
           classes.push(this.errorOutlineClass)
         } else {
-          classes.push(this.primaryOutlineClass);
+          classes.push(this.primaryOutlineClass)
         }
       } else {
         if (this.secondary) {
-          classes.push(this.secondaryClass);
-        } else if(this.error) {
+          classes.push(this.secondaryClass)
+        } else if (this.error) {
           classes.push(this.errorClass)
-          } else {
-          classes.push(this.primaryClass);
+        } else {
+          classes.push(this.primaryClass)
         }
       }
 
       if (this.small) {
-        classes.push(this.smallClass);
+        classes.push(this.smallClass)
       }
 
       if (this.full) {
-        classes.push(this.fullClass);
+        classes.push(this.fullClass)
       }
 
       if (this.disabled) {
-        classes.push(this.disabledClass);
+        classes.push(this.disabledClass)
       }
 
       if (this.normalSize) {
-        classes.push(this.normalSizeClass);
+        classes.push(this.normalSizeClass)
       }
 
-      return classes;
+      return classes
     },
 
     normalSize() {
-      return !this.small;
-    }
+      return !this.small
+    },
+  },
+
+  mounted() {
+    console.log('components', this.$options.components)
+    console.log('router link', this.$options.components.RouterLink)
+    console.log('router link', this.$options.components.NuxtLink)
   },
 
   methods: {
-    onClick (event) {
+    onClick(event) {
       this.$emit('click', event)
     },
 
-    onBlur (event) {
+    onBlur(event) {
       this.$emit('blur', event)
     },
 
-    onFocus (event) {
+    onFocus(event) {
       this.$emit('focus', event)
     },
-  }
-};
+  },
+}
 </script>
 <style>
 .loader,

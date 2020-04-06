@@ -12,8 +12,8 @@ const defaultTheme = {
   R64Input,
   R64Select,
   R64Textarea,
-};
+}
 
-export { R64Button, R64Checkbox, R64Input, R64Select, R64Radio, R64Textarea };
+export { R64Button, R64Checkbox, R64Input, R64Select, R64Radio, R64Textarea }
 
 export default defaultTheme

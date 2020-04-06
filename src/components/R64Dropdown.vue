@@ -1,9 +1,6 @@
 <template>
   <div>
-    <div
-      :class="dropdownClass"
-      @click="toggle"
-    >
+    <div :class="dropdownClass" @click="toggle">
       <slot name="header" />
       <svg
         v-if="expanded"
@@ -12,17 +9,20 @@
         viewBox="0 0 24 24"
         stroke="currentColor"
       >
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
       </svg>
 
-      <svg v-else fill="none" class="text-gray-700 w-4 h-4" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      <svg
+        v-else
+        fill="none"
+        class="text-gray-700 w-4 h-4"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
       </svg>
     </div>
-    <div
-      v-show="expanded"
-      :class="itemsContainerClass"
-    >
+    <div v-show="expanded" :class="itemsContainerClass">
       <slot />
     </div>
   </div>
@@ -30,10 +30,7 @@
 <script>
 import R64DropdownClasses from "../themes/default/R64Dropdown";
 
-const {
-  dropdownClass,
-  itemsContainerClass,
-} = R64DropdownClasses;
+const { dropdownClass, itemsContainerClass } = R64DropdownClasses;
 export default {
   name: "R64Dropdown",
 
@@ -44,11 +41,11 @@ export default {
     },
     dropdownClass: {
       type: String,
-      default: dropdownClass,
+      default: dropdownClass
     },
     itemsContainerClass: {
       type: String,
-      default: itemsContainerClass,
+      default: itemsContainerClass
     }
   },
 
@@ -64,8 +61,8 @@ export default {
 
   methods: {
     toggle(event) {
-      this.expanded = !this.expanded;
-      this.$emit("toggle", event);
+      this.expanded = !this.expanded
+      this.$emit("toggle", event)
     }
   }
 };

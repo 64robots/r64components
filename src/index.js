@@ -13,14 +13,14 @@ const components = {
   R64Radio,
   R64Select,
   R64Textarea,
-};
+}
 
 const extendComponent = (Vue, theme, component) => {
   const currentTheme = defaultTheme[component]
   const newTheme = { ...currentTheme, ...theme }
 
   const { props } = components[component]
-  Object.keys(newTheme).forEach(key => {
+  Object.keys(newTheme).forEach((key) => {
     const prop = { default: () => newTheme[key] }
     props[key] = prop
   })
@@ -28,18 +28,14 @@ const extendComponent = (Vue, theme, component) => {
   return Vue.extend({ ...components[component], ...{ props } })
 }
 
-
 export default {
   install(Vue, args = {}) {
-    if (this.installed) return;
-    this.installed = true;
+    if (this.installed) return
+    this.installed = true
 
-    const currentTheme = { ...defaultTheme, ...args };
-    Object.keys(components).forEach(component => {
-      Vue.component(
-        component,
-        extendComponent(Vue, currentTheme[component], component)
-      );
-    });
-  }
-};
+    const currentTheme = { ...defaultTheme, ...args }
+    Object.keys(components).forEach((component) => {
+      Vue.component(component, extendComponent(Vue, currentTheme[component], component))
+    })
+  },
+}
