@@ -1,5 +1,3 @@
-import _defineProperty from '@babel/runtime/helpers/defineProperty';
-
 var R64Button = {
   baseClass: 'block rounded inline-flex items-center justify-center',
   primaryClass: 'bg-gray-900 text-white hover:bg-gray-800',
@@ -16,18 +14,20 @@ var R64Button = {
 };
 
 //
-var baseClass = R64Button.baseClass,
-    primaryClass = R64Button.primaryClass,
-    secondaryClass = R64Button.secondaryClass,
-    errorClass = R64Button.errorClass,
-    outlineClass = R64Button.outlineClass,
-    primaryOutlineClass = R64Button.primaryOutlineClass,
-    secondaryOutlineClass = R64Button.secondaryOutlineClass,
-    errorOutlineClass = R64Button.errorOutlineClass,
-    smallClass = R64Button.smallClass,
-    fullClass = R64Button.fullClass,
-    disabledClass = R64Button.disabledClass,
-    normalSizeClass = R64Button.normalSizeClass;
+const {
+  baseClass,
+  primaryClass,
+  secondaryClass,
+  errorClass,
+  outlineClass,
+  primaryOutlineClass,
+  secondaryOutlineClass,
+  errorOutlineClass,
+  smallClass,
+  fullClass,
+  disabledClass,
+  normalSizeClass
+} = R64Button;
 var script = {
   name: "R64Button",
   props: {
@@ -109,8 +109,8 @@ var script = {
     }
   },
   computed: {
-    buttonClasses: function buttonClasses() {
-      var classes = [baseClass]; // REFACTOR
+    buttonClasses() {
+      const classes = [baseClass]; // REFACTOR
 
       if (this.outline) {
         classes.push(this.outlineClass);
@@ -150,20 +150,25 @@ var script = {
 
       return classes;
     },
-    normalSize: function normalSize() {
+
+    normalSize() {
       return !this.small;
     }
+
   },
   methods: {
-    onClick: function onClick(event) {
+    onClick(event) {
       this.$emit('click', event);
     },
-    onBlur: function onBlur(event) {
+
+    onBlur(event) {
       this.$emit('blur', event);
     },
-    onFocus: function onFocus(event) {
+
+    onFocus(event) {
       this.$emit('focus', event);
     }
+
   }
 };
 
@@ -253,13 +258,11 @@ function normalizeComponent(template, style, script, scopeId, isFunctionalTempla
 var normalizeComponent_1 = normalizeComponent;
 
 var isOldIE = typeof navigator !== 'undefined' && /msie [6-9]\\b/.test(navigator.userAgent.toLowerCase());
-
 function createInjector(context) {
   return function (id, style) {
     return addStyle(id, style);
   };
 }
-
 var HEAD = document.head || document.getElementsByTagName('head')[0];
 var styles = {};
 
@@ -306,37 +309,57 @@ var browser = createInjector;
 
 /* script */
 const __vue_script__ = script;
-
 /* template */
-var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',{class:_vm.buttonClasses,attrs:{"type":_vm.type},on:{"click":_vm.onClick,"blur":_vm.onBlur,"focus":_vm.onFocus}},[(!_vm.busy)?_vm._t("default"):_c('div',{staticClass:"loader"})],2)};
+
+var __vue_render__ = function () {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('button', {
+    class: _vm.buttonClasses,
+    attrs: {
+      "type": _vm.type
+    },
+    on: {
+      "click": _vm.onClick,
+      "blur": _vm.onBlur,
+      "focus": _vm.onFocus
+    }
+  }, [!_vm.busy ? _vm._t("default") : _c('div', {
+    staticClass: "loader"
+  })], 2);
+};
+
 var __vue_staticRenderFns__ = [];
+/* style */
 
-  /* style */
-  const __vue_inject_styles__ = function (inject) {
-    if (!inject) return
-    inject("data-v-4580da6c_0", { source: ".loader,.loader:after{display:block;border-radius:50%;width:24px;height:24px}.loader{position:relative;border-top:.2rem solid rgba(255,255,255,.2);border-right:.2rem solid rgba(255,255,255,.2);border-bottom:.2rem solid rgba(255,255,255,.2);border-left:.2rem solid #fff;transform:translateZ(0);animation:load8 1.1s infinite linear}@-webkit-keyframes load8{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes load8{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}", map: undefined, media: undefined });
+const __vue_inject_styles__ = function (inject) {
+  if (!inject) return;
+  inject("data-v-4580da6c_0", {
+    source: ".loader,.loader:after{display:block;border-radius:50%;width:24px;height:24px}.loader{position:relative;border-top:.2rem solid rgba(255,255,255,.2);border-right:.2rem solid rgba(255,255,255,.2);border-bottom:.2rem solid rgba(255,255,255,.2);border-left:.2rem solid #fff;transform:translateZ(0);animation:load8 1.1s infinite linear}@-webkit-keyframes load8{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes load8{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}",
+    map: undefined,
+    media: undefined
+  });
+};
+/* scoped */
 
-  };
-  /* scoped */
-  const __vue_scope_id__ = undefined;
-  /* module identifier */
-  const __vue_module_identifier__ = undefined;
-  /* functional template */
-  const __vue_is_functional_template__ = false;
-  /* style inject SSR */
-  
 
-  
-  var R64Button$1 = normalizeComponent_1(
-    { render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ },
-    __vue_inject_styles__,
-    __vue_script__,
-    __vue_scope_id__,
-    __vue_is_functional_template__,
-    __vue_module_identifier__,
-    browser,
-    undefined
-  );
+const __vue_scope_id__ = undefined;
+/* module identifier */
+
+const __vue_module_identifier__ = undefined;
+/* functional template */
+
+const __vue_is_functional_template__ = false;
+/* style inject SSR */
+
+var R64Button$1 = normalizeComponent_1({
+  render: __vue_render__,
+  staticRenderFns: __vue_staticRenderFns__
+}, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, browser, undefined);
 
 var R64Checkbox = {
   wrapperClass: 'mb-1 h-12',
@@ -395,13 +418,13 @@ var R64Textarea = {
   errorMessageClass: "mt-1 text-sm text-red-500"
 };
 
-var defaultTheme = {
-  R64Button: R64Button,
-  R64Checkbox: R64Checkbox,
-  R64Radio: R64Radio,
-  R64Input: R64Input,
-  R64Select: R64Select,
-  R64Textarea: R64Textarea
+const defaultTheme = {
+  R64Button,
+  R64Checkbox,
+  R64Radio,
+  R64Input,
+  R64Select,
+  R64Textarea
 };
 
 var formInput = {
@@ -459,7 +482,8 @@ var formInput = {
       default: ''
     }
   },
-  data: function data() {
+
+  data() {
     return {
       classes: {
         wrapper: '',
@@ -474,7 +498,8 @@ var formInput = {
       }
     };
   },
-  created: function created() {
+
+  created() {
     this.classes.wrapper = this.wrapperClass || this.componentClasses.wrapperClass;
     this.classes.base = this.baseClass || this.componentClasses.baseClass;
     this.classes.disabled = this.disabledClass || this.componentClasses.disabledClass;
@@ -485,9 +510,10 @@ var formInput = {
     this.classes.errorMessage = this.errorMessageClass || this.componentClasses.errorMessageClass;
     this.classes.helpMessage = this.helpMessageClass || this.componentClasses.helpMessageClass;
   },
+
   computed: {
-    formInputClasses: function formInputClasses() {
-      var classes = [this.classes.base];
+    formInputClasses() {
+      const classes = [this.classes.base];
 
       if (this.disabled) {
         classes.push(this.classes.disabled);
@@ -503,19 +529,23 @@ var formInput = {
 
       return classes;
     },
-    hasError: function hasError() {
+
+    hasError() {
       if (this.v) {
         return this.v.$invalid && this.v.$dirty && !this.typing;
       }
 
       return this.error && !this.typing;
     },
-    componentName: function componentName() {
+
+    componentName() {
       return this.$options._componentTag || '';
     },
-    componentClasses: function componentClasses() {
+
+    componentClasses() {
       return defaultTheme[this.componentName];
     }
+
   }
 };
 
@@ -538,46 +568,75 @@ var script$1 = {
     }
   },
   methods: {
-    onChange: function onChange() {
+    onChange() {
       if (this.v) this.v.$touch();
       this.$emit('change', !this.value);
     }
+
   }
 };
 
 /* script */
 const __vue_script__$1 = script$1;
-
 /* template */
-var __vue_render__$1 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:_vm.classes.wrapper},[_c('label',{staticClass:"inline-flex items-center"},[_c('input',_vm._b({class:_vm.formInputClasses,attrs:{"type":"checkbox","disabled":_vm.disabled},domProps:{"checked":_vm.value},on:{"change":_vm.onChange}},'input',_vm.$attrs,false)),_vm._v(" "),_c('span',{class:[_vm.classes.label]},[_vm._v("\n      "+_vm._s(_vm.label)+"\n    ")])]),_vm._v(" "),(_vm.hasError)?_c('p',{class:_vm.classes.error},[_vm._v(_vm._s(_vm.errorMessage))]):_vm._e()])};
+
+var __vue_render__$1 = function () {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('div', {
+    class: _vm.classes.wrapper
+  }, [_c('label', {
+    staticClass: "inline-flex items-center"
+  }, [_c('input', _vm._b({
+    class: _vm.formInputClasses,
+    attrs: {
+      "type": "checkbox",
+      "disabled": _vm.disabled
+    },
+    domProps: {
+      "checked": _vm.value
+    },
+    on: {
+      "change": _vm.onChange
+    }
+  }, 'input', _vm.$attrs, false)), _vm._v(" "), _c('span', {
+    class: [_vm.classes.label]
+  }, [_vm._v("\n      " + _vm._s(_vm.label) + "\n    ")])]), _vm._v(" "), _vm.hasError ? _c('p', {
+    class: _vm.classes.error
+  }, [_vm._v(_vm._s(_vm.errorMessage))]) : _vm._e()]);
+};
+
 var __vue_staticRenderFns__$1 = [];
+/* style */
 
-  /* style */
-  const __vue_inject_styles__$1 = function (inject) {
-    if (!inject) return
-    inject("data-v-a302177a_0", { source: "input[type=checkbox]:checked{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4a1 1 0 00-1.414-1.414L7 8.586 5.707 7.293z'/%3E%3C/svg%3E\");border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:50%}", map: undefined, media: undefined });
+const __vue_inject_styles__$1 = function (inject) {
+  if (!inject) return;
+  inject("data-v-a302177a_0", {
+    source: "input[type=checkbox]:checked{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4a1 1 0 00-1.414-1.414L7 8.586 5.707 7.293z'/%3E%3C/svg%3E\");border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:50%}",
+    map: undefined,
+    media: undefined
+  });
+};
+/* scoped */
 
-  };
-  /* scoped */
-  const __vue_scope_id__$1 = undefined;
-  /* module identifier */
-  const __vue_module_identifier__$1 = undefined;
-  /* functional template */
-  const __vue_is_functional_template__$1 = false;
-  /* style inject SSR */
-  
 
-  
-  var R64Checkbox$1 = normalizeComponent_1(
-    { render: __vue_render__$1, staticRenderFns: __vue_staticRenderFns__$1 },
-    __vue_inject_styles__$1,
-    __vue_script__$1,
-    __vue_scope_id__$1,
-    __vue_is_functional_template__$1,
-    __vue_module_identifier__$1,
-    browser,
-    undefined
-  );
+const __vue_scope_id__$1 = undefined;
+/* module identifier */
+
+const __vue_module_identifier__$1 = undefined;
+/* functional template */
+
+const __vue_is_functional_template__$1 = false;
+/* style inject SSR */
+
+var R64Checkbox$1 = normalizeComponent_1({
+  render: __vue_render__$1,
+  staticRenderFns: __vue_staticRenderFns__$1
+}, __vue_inject_styles__$1, __vue_script__$1, __vue_scope_id__$1, __vue_is_functional_template__$1, __vue_module_identifier__$1, browser, undefined);
 
 //
 var script$2 = {
@@ -621,7 +680,8 @@ var script$2 = {
       default: ""
     }
   },
-  data: function data() {
+
+  data() {
     return {
       hasInput: false,
       localValue: this.value,
@@ -629,16 +689,18 @@ var script$2 = {
       focus: this.disabled
     };
   },
+
   computed: {
-    inputId: function inputId() {
+    inputId() {
       if (this.id) {
         return this.id;
       }
 
       return this._uid;
     },
-    internalType: function internalType() {
-      var textTypes = ["date", "phone", "email"];
+
+    internalType() {
+      const textTypes = ["date", "phone", "email"];
 
       if (textTypes.includes(this.type)) {
         return "text";
@@ -646,51 +708,61 @@ var script$2 = {
 
       return this.type;
     },
-    hasFeedback: function hasFeedback() {
+
+    hasFeedback() {
       return this.hasError || this.help;
     },
-    feedback: function feedback() {
+
+    feedback() {
       if (this.hasError) {
         return this.errorMessage;
       }
 
       return this.help;
     },
-    feedbackClass: function feedbackClass() {
+
+    feedbackClass() {
       return this.hasError ? this.classes.errorMessage : this.classes.helpMessage;
     }
+
   },
   watch: {
-    value: function value(newVal) {
+    value(newVal) {
       this.localValue = newVal;
     },
-    localValue: function localValue(newVal, oldVal) {
+
+    localValue(newVal, oldVal) {
       if (newVal !== oldVal) {
         this.$emit("input", newVal);
       }
     }
+
   },
-  destroyed: function destroyed() {
+
+  destroyed() {
     clearTimeout(this.typing);
   },
+
   methods: {
-    onBlur: function onBlur(event) {
+    onBlur(event) {
       this.focus = false;
       this.$emit("blur", event);
     },
-    onFocus: function onFocus(event) {
+
+    onFocus(event) {
       this.focus = true;
       this.$emit("focus", event);
     },
-    onInput: function onInput() {
+
+    onInput() {
       this.hasInput = this.localValue.length;
     },
-    onKeyUp: function onKeyUp(event) {
+
+    onKeyUp(event) {
       this.$emit('keyup', event);
     },
-    isTyping: function isTyping(event) {
-      var _this = this;
 
+    isTyping(event) {
       this.$emit('keydown', event);
       if (event.key === 'Tab') return;
 
@@ -698,49 +770,165 @@ var script$2 = {
         clearTimeout(this.typing);
       }
 
-      var id = setTimeout(function () {
-        _this.typing = false;
+      const id = setTimeout(() => {
+        this.typing = false;
 
-        if (_this.v && _this.hasInput) {
-          _this.v.$touch();
+        if (this.v && this.hasInput) {
+          this.v.$touch();
         }
       }, 750);
       this.typing = id;
     }
+
   }
 };
 
 /* script */
 const __vue_script__$2 = script$2;
-
 /* template */
-var __vue_render__$2 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:[_vm.classes.wrapper]},[_c('label',{class:_vm.classes.label,attrs:{"for":_vm.inputId}},[_vm._v("\n    "+_vm._s(_vm.label)+"\n  ")]),_vm._v(" "),((_vm.internalType)==='checkbox')?_c('input',_vm._b({directives:[{name:"model",rawName:"v-model",value:(_vm.localValue),expression:"localValue"}],ref:_vm.inputId,class:_vm.formInputClasses,attrs:{"id":_vm.inputId,"placeholder":_vm.placeholder,"disabled":_vm.disabled,"type":"checkbox"},domProps:{"checked":Array.isArray(_vm.localValue)?_vm._i(_vm.localValue,null)>-1:(_vm.localValue)},on:{"blur":_vm.onBlur,"focus":_vm.onFocus,"input":_vm.onInput,"keydown":_vm.isTyping,"keyup":_vm.onKeyUp,"change":function($event){var $$a=_vm.localValue,$$el=$event.target,$$c=$$el.checked?(true):(false);if(Array.isArray($$a)){var $$v=null,$$i=_vm._i($$a,$$v);if($$el.checked){$$i<0&&(_vm.localValue=$$a.concat([$$v]));}else {$$i>-1&&(_vm.localValue=$$a.slice(0,$$i).concat($$a.slice($$i+1)));}}else {_vm.localValue=$$c;}}}},'input',_vm.$attrs,false)):((_vm.internalType)==='radio')?_c('input',_vm._b({directives:[{name:"model",rawName:"v-model",value:(_vm.localValue),expression:"localValue"}],ref:_vm.inputId,class:_vm.formInputClasses,attrs:{"id":_vm.inputId,"placeholder":_vm.placeholder,"disabled":_vm.disabled,"type":"radio"},domProps:{"checked":_vm._q(_vm.localValue,null)},on:{"blur":_vm.onBlur,"focus":_vm.onFocus,"input":_vm.onInput,"keydown":_vm.isTyping,"keyup":_vm.onKeyUp,"change":function($event){_vm.localValue=null;}}},'input',_vm.$attrs,false)):_c('input',_vm._b({directives:[{name:"model",rawName:"v-model",value:(_vm.localValue),expression:"localValue"}],ref:_vm.inputId,class:_vm.formInputClasses,attrs:{"id":_vm.inputId,"placeholder":_vm.placeholder,"disabled":_vm.disabled,"type":_vm.internalType},domProps:{"value":(_vm.localValue)},on:{"blur":_vm.onBlur,"focus":_vm.onFocus,"input":[function($event){if($event.target.composing){ return; }_vm.localValue=$event.target.value;},_vm.onInput],"keydown":_vm.isTyping,"keyup":_vm.onKeyUp}},'input',_vm.$attrs,false)),_vm._v(" "),(_vm.hasFeedback)?_c('p',{class:_vm.feedbackClass},[_vm._v("\n    "+_vm._s(_vm.feedback)+"\n  ")]):_vm._e()])};
+
+var __vue_render__$2 = function () {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('div', {
+    class: [_vm.classes.wrapper]
+  }, [_c('label', {
+    class: _vm.classes.label,
+    attrs: {
+      "for": _vm.inputId
+    }
+  }, [_vm._v("\n    " + _vm._s(_vm.label) + "\n  ")]), _vm._v(" "), _vm.internalType === 'checkbox' ? _c('input', _vm._b({
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.localValue,
+      expression: "localValue"
+    }],
+    ref: _vm.inputId,
+    class: _vm.formInputClasses,
+    attrs: {
+      "id": _vm.inputId,
+      "placeholder": _vm.placeholder,
+      "disabled": _vm.disabled,
+      "type": "checkbox"
+    },
+    domProps: {
+      "checked": Array.isArray(_vm.localValue) ? _vm._i(_vm.localValue, null) > -1 : _vm.localValue
+    },
+    on: {
+      "blur": _vm.onBlur,
+      "focus": _vm.onFocus,
+      "input": _vm.onInput,
+      "keydown": _vm.isTyping,
+      "keyup": _vm.onKeyUp,
+      "change": function ($event) {
+        var $$a = _vm.localValue,
+            $$el = $event.target,
+            $$c = $$el.checked ? true : false;
+
+        if (Array.isArray($$a)) {
+          var $$v = null,
+              $$i = _vm._i($$a, $$v);
+
+          if ($$el.checked) {
+            $$i < 0 && (_vm.localValue = $$a.concat([$$v]));
+          } else {
+            $$i > -1 && (_vm.localValue = $$a.slice(0, $$i).concat($$a.slice($$i + 1)));
+          }
+        } else {
+          _vm.localValue = $$c;
+        }
+      }
+    }
+  }, 'input', _vm.$attrs, false)) : _vm.internalType === 'radio' ? _c('input', _vm._b({
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.localValue,
+      expression: "localValue"
+    }],
+    ref: _vm.inputId,
+    class: _vm.formInputClasses,
+    attrs: {
+      "id": _vm.inputId,
+      "placeholder": _vm.placeholder,
+      "disabled": _vm.disabled,
+      "type": "radio"
+    },
+    domProps: {
+      "checked": _vm._q(_vm.localValue, null)
+    },
+    on: {
+      "blur": _vm.onBlur,
+      "focus": _vm.onFocus,
+      "input": _vm.onInput,
+      "keydown": _vm.isTyping,
+      "keyup": _vm.onKeyUp,
+      "change": function ($event) {
+        _vm.localValue = null;
+      }
+    }
+  }, 'input', _vm.$attrs, false)) : _c('input', _vm._b({
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.localValue,
+      expression: "localValue"
+    }],
+    ref: _vm.inputId,
+    class: _vm.formInputClasses,
+    attrs: {
+      "id": _vm.inputId,
+      "placeholder": _vm.placeholder,
+      "disabled": _vm.disabled,
+      "type": _vm.internalType
+    },
+    domProps: {
+      "value": _vm.localValue
+    },
+    on: {
+      "blur": _vm.onBlur,
+      "focus": _vm.onFocus,
+      "input": [function ($event) {
+        if ($event.target.composing) {
+          return;
+        }
+
+        _vm.localValue = $event.target.value;
+      }, _vm.onInput],
+      "keydown": _vm.isTyping,
+      "keyup": _vm.onKeyUp
+    }
+  }, 'input', _vm.$attrs, false)), _vm._v(" "), _vm.hasFeedback ? _c('p', {
+    class: _vm.feedbackClass
+  }, [_vm._v("\n    " + _vm._s(_vm.feedback) + "\n  ")]) : _vm._e()]);
+};
+
 var __vue_staticRenderFns__$2 = [];
+/* style */
 
-  /* style */
-  const __vue_inject_styles__$2 = undefined;
-  /* scoped */
-  const __vue_scope_id__$2 = undefined;
-  /* module identifier */
-  const __vue_module_identifier__$2 = undefined;
-  /* functional template */
-  const __vue_is_functional_template__$2 = false;
-  /* style inject */
-  
-  /* style inject SSR */
-  
+const __vue_inject_styles__$2 = undefined;
+/* scoped */
 
-  
-  var R64Input$1 = normalizeComponent_1(
-    { render: __vue_render__$2, staticRenderFns: __vue_staticRenderFns__$2 },
-    __vue_inject_styles__$2,
-    __vue_script__$2,
-    __vue_scope_id__$2,
-    __vue_is_functional_template__$2,
-    __vue_module_identifier__$2,
-    undefined,
-    undefined
-  );
+const __vue_scope_id__$2 = undefined;
+/* module identifier */
+
+const __vue_module_identifier__$2 = undefined;
+/* functional template */
+
+const __vue_is_functional_template__$2 = false;
+/* style inject */
+
+/* style inject SSR */
+
+var R64Input$1 = normalizeComponent_1({
+  render: __vue_render__$2,
+  staticRenderFns: __vue_staticRenderFns__$2
+}, __vue_inject_styles__$2, __vue_script__$2, __vue_scope_id__$2, __vue_is_functional_template__$2, __vue_module_identifier__$2, undefined, undefined);
 
 //
 var script$3 = {
@@ -784,7 +972,8 @@ var script$3 = {
       default: ""
     }
   },
-  data: function data() {
+
+  data() {
     return {
       hasInput: false,
       localValue: this.value,
@@ -792,59 +981,70 @@ var script$3 = {
       focus: this.disabled
     };
   },
+
   computed: {
-    textareaId: function textareaId() {
+    textareaId() {
       if (this.id) {
         return this.id;
       }
 
       return this._uid;
     },
-    hasFeedback: function hasFeedback() {
+
+    hasFeedback() {
       return this.hasError || this.help;
     },
-    feedback: function feedback() {
+
+    feedback() {
       if (this.hasError) {
         return this.errorMessage;
       }
 
       return this.help;
     },
-    feedbackClass: function feedbackClass() {
+
+    feedbackClass() {
       return this.hasError ? this.classes.errorMessage : this.classes.helpMessage;
     }
+
   },
   watch: {
-    value: function value(newVal) {
+    value(newVal) {
       this.localValue = newVal;
     },
-    localValue: function localValue(newVal, oldVal) {
+
+    localValue(newVal, oldVal) {
       if (newVal !== oldVal) {
         this.$emit("input", newVal);
       }
     }
+
   },
-  destroyed: function destroyed() {
+
+  destroyed() {
     clearTimeout(this.typing);
   },
+
   methods: {
-    onBlur: function onBlur(event) {
+    onBlur(event) {
       this.focus = false;
       this.$emit("blur", event);
     },
-    onFocus: function onFocus(event) {
+
+    onFocus(event) {
       this.focus = true;
       this.$emit("focus", event);
     },
-    onInput: function onInput() {
+
+    onInput() {
       this.hasInput = this.localValue.length;
     },
-    onKeyUp: function onKeyUp(event) {
+
+    onKeyUp(event) {
       this.$emit('keyup', event);
     },
-    isTyping: function isTyping(event) {
-      var _this = this;
 
+    isTyping(event) {
       this.$emit('keydown', event);
       if (event.key === 'Tab') return;
 
@@ -852,49 +1052,93 @@ var script$3 = {
         clearTimeout(this.typing);
       }
 
-      var id = setTimeout(function () {
-        _this.typing = false;
+      const id = setTimeout(() => {
+        this.typing = false;
 
-        if (_this.v && _this.hasInput) {
-          _this.v.$touch();
+        if (this.v && this.hasInput) {
+          this.v.$touch();
         }
       }, 750);
       this.typing = id;
     }
+
   }
 };
 
 /* script */
 const __vue_script__$3 = script$3;
-
 /* template */
-var __vue_render__$3 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:[_vm.classes.wrapper]},[_c('label',{class:_vm.classes.label,attrs:{"for":_vm.inputId}},[_vm._v("\n    "+_vm._s(_vm.label)+"\n  ")]),_vm._v(" "),_c('textarea',_vm._b({directives:[{name:"model",rawName:"v-model",value:(_vm.localValue),expression:"localValue"}],ref:_vm.textareaId,class:_vm.formInputClasses,attrs:{"id":_vm.textareaId,"placeholder":_vm.placeholder,"disabled":_vm.disabled},domProps:{"value":(_vm.localValue)},on:{"blur":_vm.onBlur,"focus":_vm.onFocus,"input":[function($event){if($event.target.composing){ return; }_vm.localValue=$event.target.value;},_vm.onInput],"keydown":_vm.isTyping,"keyup":_vm.onKeyUp}},'textarea',_vm.$attrs,false)),_vm._v(" "),(_vm.hasFeedback)?_c('p',{class:_vm.feedbackClass},[_vm._v("\n    "+_vm._s(_vm.feedback)+"\n  ")]):_vm._e()])};
+
+var __vue_render__$3 = function () {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('div', {
+    class: [_vm.classes.wrapper]
+  }, [_c('label', {
+    class: _vm.classes.label,
+    attrs: {
+      "for": _vm.inputId
+    }
+  }, [_vm._v("\n    " + _vm._s(_vm.label) + "\n  ")]), _vm._v(" "), _c('textarea', _vm._b({
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.localValue,
+      expression: "localValue"
+    }],
+    ref: _vm.textareaId,
+    class: _vm.formInputClasses,
+    attrs: {
+      "id": _vm.textareaId,
+      "placeholder": _vm.placeholder,
+      "disabled": _vm.disabled
+    },
+    domProps: {
+      "value": _vm.localValue
+    },
+    on: {
+      "blur": _vm.onBlur,
+      "focus": _vm.onFocus,
+      "input": [function ($event) {
+        if ($event.target.composing) {
+          return;
+        }
+
+        _vm.localValue = $event.target.value;
+      }, _vm.onInput],
+      "keydown": _vm.isTyping,
+      "keyup": _vm.onKeyUp
+    }
+  }, 'textarea', _vm.$attrs, false)), _vm._v(" "), _vm.hasFeedback ? _c('p', {
+    class: _vm.feedbackClass
+  }, [_vm._v("\n    " + _vm._s(_vm.feedback) + "\n  ")]) : _vm._e()]);
+};
+
 var __vue_staticRenderFns__$3 = [];
+/* style */
 
-  /* style */
-  const __vue_inject_styles__$3 = undefined;
-  /* scoped */
-  const __vue_scope_id__$3 = undefined;
-  /* module identifier */
-  const __vue_module_identifier__$3 = undefined;
-  /* functional template */
-  const __vue_is_functional_template__$3 = false;
-  /* style inject */
-  
-  /* style inject SSR */
-  
+const __vue_inject_styles__$3 = undefined;
+/* scoped */
 
-  
-  var R64Textarea$1 = normalizeComponent_1(
-    { render: __vue_render__$3, staticRenderFns: __vue_staticRenderFns__$3 },
-    __vue_inject_styles__$3,
-    __vue_script__$3,
-    __vue_scope_id__$3,
-    __vue_is_functional_template__$3,
-    __vue_module_identifier__$3,
-    undefined,
-    undefined
-  );
+const __vue_scope_id__$3 = undefined;
+/* module identifier */
+
+const __vue_module_identifier__$3 = undefined;
+/* functional template */
+
+const __vue_is_functional_template__$3 = false;
+/* style inject */
+
+/* style inject SSR */
+
+var R64Textarea$1 = normalizeComponent_1({
+  render: __vue_render__$3,
+  staticRenderFns: __vue_staticRenderFns__$3
+}, __vue_inject_styles__$3, __vue_script__$3, __vue_scope_id__$3, __vue_is_functional_template__$3, __vue_module_identifier__$3, undefined, undefined);
 
 //
 var script$4 = {
@@ -923,45 +1167,78 @@ var script$4 = {
     }
   },
   computed: {
-    checked: function checked() {
+    checked() {
       return this.value === this.radioValue;
     }
+
   }
 };
 
 /* script */
 const __vue_script__$4 = script$4;
-
 /* template */
-var __vue_render__$4 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:_vm.classes.wrapper},[_c('label',{staticClass:"inline-flex items-center"},[_c('input',_vm._b({class:_vm.formInputClasses,attrs:{"type":"radio","name":_vm.name,"disabled":_vm.disabled},domProps:{"value":_vm.value,"checked":_vm.checked},on:{"click":function($event){return _vm.$emit('click', _vm.radioValue)}}},'input',_vm.$attrs,false)),_vm._v(" "),_c('span',{class:_vm.classes.label},[_vm._v(_vm._s(_vm.label))])]),_vm._v(" "),(_vm.hasError)?_c('p',{class:_vm.classes.errorMessage},[_vm._v(_vm._s(_vm.errorMessage))]):_vm._e()])};
+
+var __vue_render__$4 = function () {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('div', {
+    class: _vm.classes.wrapper
+  }, [_c('label', {
+    staticClass: "inline-flex items-center"
+  }, [_c('input', _vm._b({
+    class: _vm.formInputClasses,
+    attrs: {
+      "type": "radio",
+      "name": _vm.name,
+      "disabled": _vm.disabled
+    },
+    domProps: {
+      "value": _vm.value,
+      "checked": _vm.checked
+    },
+    on: {
+      "click": function ($event) {
+        return _vm.$emit('click', _vm.radioValue);
+      }
+    }
+  }, 'input', _vm.$attrs, false)), _vm._v(" "), _c('span', {
+    class: _vm.classes.label
+  }, [_vm._v(_vm._s(_vm.label))])]), _vm._v(" "), _vm.hasError ? _c('p', {
+    class: _vm.classes.errorMessage
+  }, [_vm._v(_vm._s(_vm.errorMessage))]) : _vm._e()]);
+};
+
 var __vue_staticRenderFns__$4 = [];
+/* style */
 
-  /* style */
-  const __vue_inject_styles__$4 = function (inject) {
-    if (!inject) return
-    inject("data-v-f469debc_0", { source: "input[type=radio]:checked{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='3'/%3E%3C/svg%3E\");border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:50%}", map: undefined, media: undefined });
+const __vue_inject_styles__$4 = function (inject) {
+  if (!inject) return;
+  inject("data-v-f469debc_0", {
+    source: "input[type=radio]:checked{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='3'/%3E%3C/svg%3E\");border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:50%}",
+    map: undefined,
+    media: undefined
+  });
+};
+/* scoped */
 
-  };
-  /* scoped */
-  const __vue_scope_id__$4 = undefined;
-  /* module identifier */
-  const __vue_module_identifier__$4 = undefined;
-  /* functional template */
-  const __vue_is_functional_template__$4 = false;
-  /* style inject SSR */
-  
 
-  
-  var R64Radio$1 = normalizeComponent_1(
-    { render: __vue_render__$4, staticRenderFns: __vue_staticRenderFns__$4 },
-    __vue_inject_styles__$4,
-    __vue_script__$4,
-    __vue_scope_id__$4,
-    __vue_is_functional_template__$4,
-    __vue_module_identifier__$4,
-    browser,
-    undefined
-  );
+const __vue_scope_id__$4 = undefined;
+/* module identifier */
+
+const __vue_module_identifier__$4 = undefined;
+/* functional template */
+
+const __vue_is_functional_template__$4 = false;
+/* style inject SSR */
+
+var R64Radio$1 = normalizeComponent_1({
+  render: __vue_render__$4,
+  staticRenderFns: __vue_staticRenderFns__$4
+}, __vue_inject_styles__$4, __vue_script__$4, __vue_scope_id__$4, __vue_is_functional_template__$4, __vue_module_identifier__$4, browser, undefined);
 
 //
 var script$5 = {
@@ -993,117 +1270,173 @@ var script$5 = {
       default: false
     }
   },
-  data: function data() {
+
+  data() {
     return {
       localValue: this.value,
       rawValue: this.value
     };
   },
+
   watch: {
-    value: function value(newVal) {
+    value(newVal) {
       this.localValue = newVal;
     },
-    localValue: function localValue(newVal, oldVal) {
+
+    localValue(newVal, oldVal) {
       if (newVal !== oldVal) {
         if (this.v) this.v.$touch();
         this.$emit("input", newVal);
       }
     }
+
   },
   methods: {
-    onChange: function onChange(event) {
+    onChange(event) {
       this.localValue = event.target.value;
       this.$emit("change", event.target.value);
     },
-    onClick: function onClick() {
-      var isFocused = document.activeElement === this.$refs.select || document.activeElement === this.$refs.select.$el;
+
+    onClick() {
+      const isFocused = document.activeElement === this.$refs.select || document.activeElement === this.$refs.select.$el;
 
       if (isFocused) {
         this.$emit("focus", event);
       }
     }
+
   }
 };
 
 /* script */
 const __vue_script__$5 = script$5;
-
 /* template */
-var __vue_render__$5 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:[_vm.classes.wrapper]},[(_vm.label)?_c('label',{class:_vm.classes.label},[_vm._v("\n    "+_vm._s(_vm.label)+"\n  ")]):_vm._e(),_vm._v(" "),_c('select',_vm._b({directives:[{name:"model",rawName:"v-model",value:(_vm.localValue),expression:"localValue"}],ref:"select",class:_vm.formInputClasses,attrs:{"disabled":_vm.disabled,"name":_vm.name,"placeholder":_vm.placeholder},on:{"click":_vm.onClick,"change":[function($event){var $$selectedVal = Array.prototype.filter.call($event.target.options,function(o){return o.selected}).map(function(o){var val = "_value" in o ? o._value : o.value;return val}); _vm.localValue=$event.target.multiple ? $$selectedVal : $$selectedVal[0];},_vm.onChange]}},'select',_vm.$attrs,false),[(_vm.placeholder)?_c('option',{domProps:{"value":null}},[_vm._v("\n      "+_vm._s(_vm.placeholder)+"\n    ")]):_vm._e(),_vm._v(" "),_vm._l((_vm.options),function(option){return _c('option',{key:option.value,domProps:{"value":option.value}},[_vm._v("\n      "+_vm._s(option.label)+"\n    ")])})],2),_vm._v(" "),(_vm.hasError)?_c('p',{class:_vm.classes.errorMessage},[_vm._v(_vm._s(_vm.errorMessage))]):_vm._e()])};
+
+var __vue_render__$5 = function () {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('div', {
+    class: [_vm.classes.wrapper]
+  }, [_vm.label ? _c('label', {
+    class: _vm.classes.label
+  }, [_vm._v("\n    " + _vm._s(_vm.label) + "\n  ")]) : _vm._e(), _vm._v(" "), _c('select', _vm._b({
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.localValue,
+      expression: "localValue"
+    }],
+    ref: "select",
+    class: _vm.formInputClasses,
+    attrs: {
+      "disabled": _vm.disabled,
+      "name": _vm.name,
+      "placeholder": _vm.placeholder
+    },
+    on: {
+      "click": _vm.onClick,
+      "change": [function ($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
+          return o.selected;
+        }).map(function (o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val;
+        });
+        _vm.localValue = $event.target.multiple ? $$selectedVal : $$selectedVal[0];
+      }, _vm.onChange]
+    }
+  }, 'select', _vm.$attrs, false), [_vm.placeholder ? _c('option', {
+    domProps: {
+      "value": null
+    }
+  }, [_vm._v("\n      " + _vm._s(_vm.placeholder) + "\n    ")]) : _vm._e(), _vm._v(" "), _vm._l(_vm.options, function (option) {
+    return _c('option', {
+      key: option.value,
+      domProps: {
+        "value": option.value
+      }
+    }, [_vm._v("\n      " + _vm._s(option.label) + "\n    ")]);
+  })], 2), _vm._v(" "), _vm.hasError ? _c('p', {
+    class: _vm.classes.errorMessage
+  }, [_vm._v(_vm._s(_vm.errorMessage))]) : _vm._e()]);
+};
+
 var __vue_staticRenderFns__$5 = [];
+/* style */
 
-  /* style */
-  const __vue_inject_styles__$5 = function (inject) {
-    if (!inject) return
-    inject("data-v-367a5979_0", { source: "select{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M7 7l3-3 3 3m0 6l-3 3-3-3' stroke='%239fa6b2' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\");background-repeat:no-repeat;background-position:right 1rem center;background-size:1.5em 1.5em}", map: undefined, media: undefined });
+const __vue_inject_styles__$5 = function (inject) {
+  if (!inject) return;
+  inject("data-v-367a5979_0", {
+    source: "select{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M7 7l3-3 3 3m0 6l-3 3-3-3' stroke='%239fa6b2' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\");background-repeat:no-repeat;background-position:right 1rem center;background-size:1.5em 1.5em}",
+    map: undefined,
+    media: undefined
+  });
+};
+/* scoped */
 
-  };
-  /* scoped */
-  const __vue_scope_id__$5 = undefined;
-  /* module identifier */
-  const __vue_module_identifier__$5 = undefined;
-  /* functional template */
-  const __vue_is_functional_template__$5 = false;
-  /* style inject SSR */
-  
 
-  
-  var R64Select$1 = normalizeComponent_1(
-    { render: __vue_render__$5, staticRenderFns: __vue_staticRenderFns__$5 },
-    __vue_inject_styles__$5,
-    __vue_script__$5,
-    __vue_scope_id__$5,
-    __vue_is_functional_template__$5,
-    __vue_module_identifier__$5,
-    browser,
-    undefined
-  );
+const __vue_scope_id__$5 = undefined;
+/* module identifier */
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+const __vue_module_identifier__$5 = undefined;
+/* functional template */
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-var components = {
+const __vue_is_functional_template__$5 = false;
+/* style inject SSR */
+
+var R64Select$1 = normalizeComponent_1({
+  render: __vue_render__$5,
+  staticRenderFns: __vue_staticRenderFns__$5
+}, __vue_inject_styles__$5, __vue_script__$5, __vue_scope_id__$5, __vue_is_functional_template__$5, __vue_module_identifier__$5, browser, undefined);
+
+const components = {
   R64Button: R64Button$1,
   R64Checkbox: R64Checkbox$1,
   R64Input: R64Input$1,
+  R64Textarea: R64Textarea$1,
   R64Radio: R64Radio$1,
-  R64Select: R64Select$1,
-  R64Textarea: R64Textarea$1
+  R64Select: R64Select$1
 };
 
-var extendComponent = function extendComponent(Vue, theme, component) {
-  var currentTheme = defaultTheme[component];
-
-  var newTheme = _objectSpread({}, currentTheme, {}, theme);
-
-  var props = components[component].props;
-  Object.keys(newTheme).forEach(function (key) {
-    var prop = {
-      default: function _default() {
-        return newTheme[key];
-      }
+const extendComponent = (Vue, theme, component) => {
+  const currentTheme = defaultTheme[component];
+  const newTheme = { ...currentTheme,
+    ...theme
+  };
+  const {
+    props
+  } = components[component];
+  Object.keys(newTheme).forEach(key => {
+    const prop = {
+      default: () => newTheme[key]
     };
     props[key] = prop;
   });
-  return Vue.extend(_objectSpread({}, components[component], {}, {
-    props: props
-  }));
+  return Vue.extend({ ...components[component],
+    ...{
+      props
+    }
+  });
 };
 
-function install(Vue) {
-  var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+const install = function (Vue, options = {}) {
   if (install.installed) return;
   install.installed = true;
-
-  var currentTheme = _objectSpread({}, defaultTheme, {}, options);
-
-  Object.keys(components).forEach(function (component) {
+  const currentTheme = { ...defaultTheme,
+    ...options
+  };
+  Object.keys(components).forEach(component => {
     Vue.component(component, extendComponent(Vue, currentTheme[component], component));
   });
-}
-var plugin = {
-  install: install
+};
+
+const plugin = {
+  install
 };
 
 export default plugin;
-export { install };
+export { R64Button$1 as R64Button, R64Checkbox$1 as R64Checkbox, R64Input$1 as R64Input, R64Radio$1 as R64Radio, R64Select$1 as R64Select, R64Textarea$1 as R64Textarea };

@@ -48,29 +48,29 @@
               :v="$v.profile.message"
               error-message="Can't be blank"
             />
-            <R64Checkbox label="Comments" v-model="profile.comments" />
-            <R64Checkbox label="Candidates" v-model="profile.candidates" />
+            <R64Checkbox v-model="profile.comments" label="Comments" />
+            <R64Checkbox v-model="profile.candidates" label="Candidates" />
             <div>
               <p class="mb-4">Get notified by sms</p>
               <div class="flex">
                 <R64Radio
-                  name="sms"
                   v-model="profile.sms"
-                  :radioValue="true"
+                  name="sms"
+                  :radio-value="true"
                   label="Yes"
                 />
                 <R64Radio
+                  v-model="profile.sms"
                   name="sms"
                   class="ml-8"
-                  v-model="profile.sms"
-                  :radioValue="false"
+                  :radio-value="false"
                   label="No"
                 />
               </div>
             </div>
             <R64Checkbox
-              label="Terms and conditions"
               v-model="profile.terms"
+              label="Terms and conditions"
               :v="$v.profile.terms"
               error-message="Terms and conditions must be accepted"
             />
@@ -132,31 +132,31 @@
               error-message="Can't be blank"
               secondary
             />
-            <R64Checkbox label="Comments" v-model="secondaryProfile.comments" secondary />
-            <R64Checkbox label="Candidates" v-model="secondaryProfile.candidates" secondary />
+            <R64Checkbox v-model="secondaryProfile.comments" label="Comments" secondary />
+            <R64Checkbox v-model="secondaryProfile.candidates" label="Candidates" secondary />
             <div>
               <p class="mb-4">Get notified by sms</p>
               <div class="flex">
                 <R64Radio
-                  name="sms"
                   v-model="secondaryProfile.sms"
-                  :radioValue="true"
+                  name="sms"
+                  :radio-value="true"
                   label="Yes"
                   secondary
                 />
                 <R64Radio
+                  v-model="secondaryProfile.sms"
                   name="sms"
                   class="ml-8"
-                  v-model="secondaryProfile.sms"
-                  :radioValue="false"
+                  :radio-value="false"
                   label="No"
                   secondary
                 />
               </div>
             </div>
             <R64Checkbox
-              label="Terms and conditions"
               v-model="secondaryProfile.terms"
+              label="Terms and conditions"
               :v="$v.secondaryProfile.terms"
               error-message="Terms and conditions must be accepted"
               secondary
@@ -173,16 +173,16 @@
 </template>
 
 <script>
-import { required, minLength, email } from "vuelidate/lib/validators";
-import R64Button from "@/components/R64Button.vue";
-import R64Input from "@/components/R64Input.vue";
-import R64Select from "@/components/R64Select.vue";
-import R64Checkbox from "@/components/R64Checkbox.vue";
-import R64Radio from "@/components/R64Radio.vue";
-import R64Textarea from "@/components/R64Textarea.vue";
+import { required, minLength, email } from 'vuelidate/lib/validators';
+import R64Button from '@/components/R64Button.vue';
+import R64Input from '@/components/R64Input.vue';
+import R64Select from '@/components/R64Select.vue';
+import R64Checkbox from '@/components/R64Checkbox.vue';
+import R64Radio from '@/components/R64Radio.vue';
+import R64Textarea from '@/components/R64Textarea.vue';
 
 export default {
-  name: "app",
+  name: 'App',
 
   components: {
     R64Button,
@@ -196,11 +196,11 @@ export default {
   data() {
     return {
       profile: {
-        name: "",
-        lastName: "",
-        country: "",
-        email: "",
-        message: "",
+        name: '',
+        lastName: '',
+        country: '',
+        email: '',
+        message: '',
         notifications: 'weekly',
         comments: false,
         candidates: true,
@@ -208,11 +208,11 @@ export default {
         terms: false
       },
       secondaryProfile: {
-        name: "",
-        lastName: "",
-        country: "",
-        email: "",
-        message: "",
+        name: '',
+        lastName: '',
+        country: '',
+        email: '',
+        message: '',
         notifications: 'weekly',
         comments: false,
         candidates: true,
@@ -225,20 +225,20 @@ export default {
   computed: {
     countries() {
       return [
-        { value: "spain", label: "Spain" },
-        { value: "us", label: "United States" },
-        { value: "morocco", label: "Morocco" },
-        { value: "slovakia", label: "Slovakia" },
-        { value: "ghana", label: "Ghana" },
-        { value: "brazil", label: "Brazil" }
+        { value: 'spain', label: 'Spain' },
+        { value: 'us', label: 'United States' },
+        { value: 'morocco', label: 'Morocco' },
+        { value: 'slovakia', label: 'Slovakia' },
+        { value: 'ghana', label: 'Ghana' },
+        { value: 'brazil', label: 'Brazil' }
       ];
     },
 
     schedule() {
       return [
-        { value: "daily", label: "Daily" },
-        { value: "weekly", label: "Weekly" },
-        { value: "monthly", label: "Montly" }
+        { value: 'daily', label: 'Daily' },
+        { value: 'weekly', label: 'Weekly' },
+        { value: 'monthly', label: 'Montly' }
       ];
     }
   },
