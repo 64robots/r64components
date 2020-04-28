@@ -4,13 +4,14 @@
   "license": "MIT",
   "version": "0.1.27",
   "description": "Set of customizable components made with Tailwindcss",
-  "main": "dist/js/r64components.js",
+  "main": "dist/r64components.common.js",
+  "module": "dist/r64components.esm.js",
   "jsnext:main": "src/index.js",
-  "unpkg": "dist/js/r64components.min.js",
+  "unpkg": "dist/r64components.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "node_modules/.bin/eslint ./",
-    "build": "NODE_ENV=production node_modules/.bin/rollup -c ./build/rollup.config.js && NODE_ENV=production BUILD_MODE=minify node_modules/.bin/rollup -c ./build/rollup.config.js",
+    "build": "NODE_ENV=production node_modules/.bin/rollup -c ./build/rollup.config.js && NODE_ENV=production BUILD_MODE=minify node_modules/.bin/rollup -c ./build/rollup.config.js && NODE_ENV=production node_modules/.bin/rollup -c ./build/rollup.ssr.config.js",
     "storybook": "start-storybook -p 6006",
     "docs:build": "vuepress build docs"
   },

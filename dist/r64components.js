@@ -1,7 +1,7 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@babel/runtime/helpers/defineProperty')) :
   typeof define === 'function' && define.amd ? define(['exports', '@babel/runtime/helpers/defineProperty'], factory) :
-  (global = global || self, factory(global.R64Components = {}, global._defineProperty));
+  (global = global || self, factory(global.r64components = {}, global._defineProperty));
 }(this, (function (exports, _defineProperty) { 'use strict';
 
   _defineProperty = _defineProperty && Object.prototype.hasOwnProperty.call(_defineProperty, 'default') ? _defineProperty['default'] : _defineProperty;
