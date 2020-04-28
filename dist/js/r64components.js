@@ -1,24 +1,24 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('@babel/runtime/helpers/defineProperty')) :
-  typeof define === 'function' && define.amd ? define(['@babel/runtime/helpers/defineProperty'], factory) :
-  (global = global || self, global.R64Components = factory(global._defineProperty));
-}(this, (function (_defineProperty) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@babel/runtime/helpers/defineProperty')) :
+  typeof define === 'function' && define.amd ? define(['exports', '@babel/runtime/helpers/defineProperty'], factory) :
+  (global = global || self, factory(global.R64Components = {}, global._defineProperty));
+}(this, (function (exports, _defineProperty) { 'use strict';
 
   _defineProperty = _defineProperty && Object.prototype.hasOwnProperty.call(_defineProperty, 'default') ? _defineProperty['default'] : _defineProperty;
 
   var R64Button = {
-    baseClass: "block rounded inline-flex items-center justify-center",
-    primaryClass: "bg-gray-900 text-white hover:bg-gray-800",
-    secondaryClass: "bg-indigo-500 hover:bg-indigo-400 text-white",
-    errorClass: "bg-red-500 text-white hover:bg-red-500",
-    disabledClass: "opacity-50 pointer-events-none",
-    outlineClass: "border bg-transparent transition duration-150 ease-in-out",
-    primaryOutlineClass: "border-gray-900 text-gray-900 hover:bg-gray-800 hover:text-white",
-    secondaryOutlineClass: "border-indigo-500 text-indigo-500 hover:bg-indigo-400 hover:text-white",
-    errorOutlineClass: "border-red-500 text-red-500 hover:bg-red-500 hover:text-white",
-    smallClass: "font-normal py-1 px-5",
-    fullClass: "w-full",
-    normalSizeClass: "font-semibold py-2 px-6"
+    baseClass: 'block rounded inline-flex items-center justify-center',
+    primaryClass: 'bg-gray-900 text-white hover:bg-gray-800',
+    secondaryClass: 'bg-indigo-500 hover:bg-indigo-400 text-white',
+    errorClass: 'bg-red-500 text-white hover:bg-red-500',
+    disabledClass: 'opacity-50 pointer-events-none',
+    outlineClass: 'border bg-transparent transition duration-150 ease-in-out',
+    primaryOutlineClass: 'border-gray-900 text-gray-900 hover:bg-gray-800 hover:text-white',
+    secondaryOutlineClass: 'border-indigo-500 text-indigo-500 hover:bg-indigo-400 hover:text-white',
+    errorOutlineClass: 'border-red-500 text-red-500 hover:bg-red-500 hover:text-white',
+    smallClass: 'font-normal py-1 px-5',
+    fullClass: 'w-full',
+    normalSizeClass: 'font-semibold py-2 px-6'
   };
 
   //
@@ -345,14 +345,14 @@
     );
 
   var R64Checkbox = {
-    wrapperClass: "mb-1 h-12",
-    labelClass: "ml-2 text-black",
-    baseClass: "appearance-none outline-none select-none w-4 h-4 bg-white border border-gray-400 rounded transition duration-150 ease-in-out focus:shadow-outline focus:border-blue-400",
-    primaryClass: "text-black",
-    secondaryClass: "text-indigo-500",
-    errorClass: "text-red-500",
-    disabledClass: "opacity-50",
-    errorMessageClass: "mt-1 text-sm text-red-500"
+    wrapperClass: 'mb-1 h-12',
+    labelClass: 'ml-2 text-black',
+    baseClass: 'appearance-none outline-none select-none w-4 h-4 bg-white border border-gray-400 rounded transition duration-150 ease-in-out focus:shadow-outline focus:border-blue-400',
+    primaryClass: 'text-black',
+    secondaryClass: 'text-indigo-500',
+    errorClass: 'text-red-500',
+    disabledClass: 'opacity-50',
+    errorMessageClass: 'mt-1 text-sm text-red-500'
   };
 
   var R64Radio = {
@@ -379,14 +379,14 @@
   };
 
   var R64Select = {
-    wrapperClass: "mb-1 h-24",
-    labelClass: "block mb-1 text-gray-700",
-    baseClass: "leading-snug w-full transition duration-150 ease-in-out appearance-none py-2 pr-10 pl-3 rounded",
-    primaryClass: "border border-gray-400 bg-white",
-    secondaryClass: "border border-indigo-300 bg-white",
-    errorClass: "border border-red-500 bg-white",
-    disabledClass: "opacity-50",
-    errorMessageClass: "mt-1 text-sm text-red-500"
+    wrapperClass: 'mb-1 h-24',
+    labelClass: 'block mb-1 text-gray-700',
+    baseClass: 'leading-snug w-full transition duration-150 ease-in-out appearance-none py-2 pr-10 pl-3 rounded',
+    primaryClass: 'border border-gray-400 bg-white',
+    secondaryClass: 'border border-indigo-300 bg-white',
+    errorClass: 'border border-red-500 bg-white',
+    disabledClass: 'opacity-50',
+    errorMessageClass: 'mt-1 text-sm text-red-500'
   };
 
   var R64Textarea = {
@@ -422,7 +422,7 @@
       },
       errorMessage: {
         type: String,
-        default: ""
+        default: ''
       },
       v: {
         type: Object,
@@ -430,35 +430,35 @@
       },
       wrapperClass: {
         type: String,
-        default: ""
+        default: ''
       },
       baseClass: {
         type: String,
-        default: ""
+        default: ''
       },
       disabledClass: {
         type: String,
-        default: ""
+        default: ''
       },
       labelClass: {
         type: String,
-        default: ""
+        default: ''
       },
       primaryClass: {
         type: String,
-        default: ""
+        default: ''
       },
       secondaryClass: {
         type: String,
-        default: ""
+        default: ''
       },
       errorClass: {
         type: String,
-        default: ""
+        default: ''
       },
       errorMessageClass: {
         type: String,
-        default: ""
+        default: ''
       },
       helpMessageClass: {
         type: String,
@@ -468,15 +468,15 @@
     data: function data() {
       return {
         classes: {
-          wrapper: "",
-          base: "",
-          disabled: "",
-          label: "",
-          primary: "",
-          secondary: "",
-          error: "",
-          errorMessage: "",
-          helpMessage: ""
+          wrapper: '',
+          base: '',
+          disabled: '',
+          label: '',
+          primary: '',
+          secondary: '',
+          error: '',
+          errorMessage: '',
+          helpMessage: ''
         }
       };
     },
@@ -517,7 +517,7 @@
         return this.error && !this.typing;
       },
       componentName: function componentName() {
-        return this.$options._componentTag || "";
+        return this.$options._componentTag || '';
       },
       componentClasses: function componentClasses() {
         return defaultTheme[this.componentName];
@@ -1096,20 +1096,24 @@
     }));
   };
 
-  var index = {
-    install: function install(Vue) {
-      var args = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-      if (this.installed) return;
-      this.installed = true;
+  function install(Vue) {
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    if (install.installed) return;
+    install.installed = true;
 
-      var currentTheme = _objectSpread({}, defaultTheme, {}, args);
+    var currentTheme = _objectSpread({}, defaultTheme, {}, options);
 
-      Object.keys(components).forEach(function (component) {
-        Vue.component(component, extendComponent(Vue, currentTheme[component], component));
-      });
-    }
+    Object.keys(components).forEach(function (component) {
+      Vue.component(component, extendComponent(Vue, currentTheme[component], component));
+    });
+  }
+  var plugin = {
+    install: install
   };
 
-  return index;
+  exports.default = plugin;
+  exports.install = install;
+
+  Object.defineProperty(exports, '__esModule', { value: true });
 
 })));

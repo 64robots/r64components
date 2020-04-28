@@ -174,12 +174,12 @@
 
 <script>
 import { required, minLength, email } from "vuelidate/lib/validators";
-import R64Button from "@/components/R64Button";
-import R64Input from "@/components/R64Input";
-import R64Select from "@/components/R64Select";
-import R64Checkbox from "@/components/R64Checkbox";
-import R64Radio from "@/components/R64Radio";
-import R64Textarea from "@/components/R64Textarea"
+import R64Button from "@/components/R64Button.vue";
+import R64Input from "@/components/R64Input.vue";
+import R64Select from "@/components/R64Select.vue";
+import R64Checkbox from "@/components/R64Checkbox.vue";
+import R64Radio from "@/components/R64Radio.vue";
+import R64Textarea from "@/components/R64Textarea.vue";
 
 export default {
   name: "app",
