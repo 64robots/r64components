@@ -1,57 +1,10 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  (global = global || self, global.R64Components = factory());
-}(this, (function () { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('@babel/runtime/helpers/defineProperty')) :
+  typeof define === 'function' && define.amd ? define(['@babel/runtime/helpers/defineProperty'], factory) :
+  (global = global || self, global.R64Components = factory(global._defineProperty));
+}(this, (function (_defineProperty) { 'use strict';
 
-  function _defineProperty(obj, key, value) {
-    if (key in obj) {
-      Object.defineProperty(obj, key, {
-        value: value,
-        enumerable: true,
-        configurable: true,
-        writable: true
-      });
-    } else {
-      obj[key] = value;
-    }
-
-    return obj;
-  }
-
-  function ownKeys(object, enumerableOnly) {
-    var keys = Object.keys(object);
-
-    if (Object.getOwnPropertySymbols) {
-      var symbols = Object.getOwnPropertySymbols(object);
-      if (enumerableOnly) symbols = symbols.filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-      });
-      keys.push.apply(keys, symbols);
-    }
-
-    return keys;
-  }
-
-  function _objectSpread2(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i] != null ? arguments[i] : {};
-
-      if (i % 2) {
-        ownKeys(Object(source), true).forEach(function (key) {
-          _defineProperty(target, key, source[key]);
-        });
-      } else if (Object.getOwnPropertyDescriptors) {
-        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-      } else {
-        ownKeys(Object(source)).forEach(function (key) {
-          Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-        });
-      }
-    }
-
-    return target;
-  }
+  _defineProperty = _defineProperty && Object.prototype.hasOwnProperty.call(_defineProperty, 'default') ? _defineProperty['default'] : _defineProperty;
 
   var R64Button = {
     baseClass: "block rounded inline-flex items-center justify-center",
@@ -1112,6 +1065,9 @@
       undefined
     );
 
+  function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+  function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
   var components = {
     R64Button: R64Button$1,
     R64Checkbox: R64Checkbox$1,
@@ -1124,7 +1080,7 @@
   var extendComponent = function extendComponent(Vue, theme, component) {
     var currentTheme = defaultTheme[component];
 
-    var newTheme = _objectSpread2({}, currentTheme, {}, theme);
+    var newTheme = _objectSpread({}, currentTheme, {}, theme);
 
     var props = components[component].props;
     Object.keys(newTheme).forEach(function (key) {
@@ -1135,7 +1091,7 @@
       };
       props[key] = prop;
     });
-    return Vue.extend(_objectSpread2({}, components[component], {}, {
+    return Vue.extend(_objectSpread({}, components[component], {}, {
       props: props
     }));
   };
@@ -1146,7 +1102,7 @@
       if (this.installed) return;
       this.installed = true;
 
-      var currentTheme = _objectSpread2({}, defaultTheme, {}, args);
+      var currentTheme = _objectSpread({}, defaultTheme, {}, args);
 
       Object.keys(components).forEach(function (component) {
         Vue.component(component, extendComponent(Vue, currentTheme[component], component));

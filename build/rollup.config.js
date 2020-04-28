@@ -11,7 +11,9 @@ export default {
     file: isMinify ? 'dist/js/r64components.min.js' : 'dist/js/r64components.js',
     format: 'umd',
     name: 'R64Components',
+    globals: { '@babel/runtime/helpers/defineProperty': '_defineProperty' },
   },
+  external: [ '@babel/runtime/helpers/defineProperty' ],
   plugins: [
     commonjs(),
     vue({
@@ -19,6 +21,15 @@ export default {
     }),
     babel({
       babelHelpers: 'runtime',
+      presets: [
+        [
+          "@babel/preset-env",
+          {
+            "modules": false
+          }
+        ]
+      ],
+      plugins: ['@babel/plugin-transform-runtime'],
     }),
     (isMinify && terser())
   ],
