@@ -1,4 +1,4 @@
-import defaultClasses from "../themes/default.js";
+import defaultClasses from '../themes/default.js';
 
 export default {
   props: {
@@ -12,7 +12,7 @@ export default {
     },
     errorMessage: {
       type: String,
-      default: ""
+      default: ''
     },
     v: {
       type: Object,
@@ -20,35 +20,35 @@ export default {
     },
     wrapperClass: {
       type: String,
-      default: ""
+      default: ''
     },
     baseClass: {
       type: String,
-      default: ""
+      default: ''
     },
     disabledClass: {
       type: String,
-      default: ""
+      default: ''
     },
     labelClass: {
       type: String,
-      default: ""
+      default: ''
     },
     primaryClass: {
       type: String,
-      default: ""
+      default: ''
     },
     secondaryClass: {
       type: String,
-      default: ""
+      default: ''
     },
     errorClass: {
       type: String,
-      default: ""
+      default: ''
     },
     errorMessageClass: {
       type: String,
-      default: ""
+      default: ''
     },
     helpMessageClass: {
       type: String,
@@ -58,15 +58,15 @@ export default {
   data() {
     return {
       classes: {
-        wrapper: "",
-        base: "",
-        disabled: "",
-        label: "",
-        primary: "",
-        secondary: "",
-        error: "",
-        errorMessage: "",
-        helpMessage: "",
+        wrapper: '',
+        base: '',
+        disabled: '',
+        label: '',
+        primary: '',
+        secondary: '',
+        error: '',
+        errorMessage: '',
+        helpMessage: '',
       }
     };
   },
@@ -109,7 +109,7 @@ export default {
     },
 
     componentName() {
-      return this.$options._componentTag || "";
+      return this.$options._componentTag || '';
     },
 
     componentClasses() {
