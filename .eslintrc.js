@@ -10,6 +10,8 @@ module.exports = {
     "sourceType": "module"
   },
   "rules": {
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     "indent": [
       "error",
       2
@@ -18,13 +20,14 @@ module.exports = {
       "error",
       "unix"
     ],
-    "quotes": [
-      "error",
-      "single"
+    quotes: [
+      2,
+      'single',
+      'avoid-escape'
     ],
-    "semi": [
-      "error",
-      "always"
-    ]
+    semi: [
+      2,
+      'never'
+    ],
   }
 };
