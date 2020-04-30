@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div v-cloak id="app">
     <div class="h-screen bg-white">
       <div class="container mx-auto flex my-12">
         <div class="w-1/2">
@@ -132,8 +132,16 @@
               error-message="Can't be blank"
               secondary
             />
-            <R64Checkbox v-model="secondaryProfile.comments" label="Comments" secondary />
-            <R64Checkbox v-model="secondaryProfile.candidates" label="Candidates" secondary />
+            <R64Checkbox
+              v-model="secondaryProfile.comments"
+              label="Comments"
+              secondary
+            />
+            <R64Checkbox
+              v-model="secondaryProfile.candidates"
+              label="Candidates"
+              secondary
+            />
             <div>
               <p class="mb-4">Get notified by sms</p>
               <div class="flex">
@@ -164,7 +172,12 @@
           </div>
           <div class="max-w-sm flex justify-between mt-12">
             <R64Button outline secondary>Back</R64Button>
-            <R64Button :disabled="$v.secondaryProfile.$invalid" secondary>Submit</R64Button>
+            <R64Button
+              :disabled="$v.secondaryProfile.$invalid"
+              secondary
+            >
+              Submit
+            </R64Button>
           </div>
         </div>
       </div>
@@ -173,13 +186,13 @@
 </template>
 
 <script>
-import { required, minLength, email } from 'vuelidate/lib/validators';
-import R64Button from '@/components/R64Button.vue';
-import R64Input from '@/components/R64Input.vue';
-import R64Select from '@/components/R64Select.vue';
-import R64Checkbox from '@/components/R64Checkbox.vue';
-import R64Radio from '@/components/R64Radio.vue';
-import R64Textarea from '@/components/R64Textarea.vue';
+import { required, minLength, email } from 'vuelidate/lib/validators'
+import R64Button from '@/components/R64Button.vue'
+import R64Input from '@/components/R64Input.vue'
+import R64Select from '@/components/R64Select.vue'
+import R64Checkbox from '@/components/R64Checkbox.vue'
+import R64Radio from '@/components/R64Radio.vue'
+import R64Textarea from '@/components/R64Textarea.vue'
 
 export default {
   name: 'App',
@@ -190,7 +203,7 @@ export default {
     R64Select,
     R64Checkbox,
     R64Radio,
-    R64Textarea,
+    R64Textarea
   },
 
   data() {
@@ -218,8 +231,8 @@ export default {
         candidates: true,
         sms: false,
         terms: false
-      },
-    };
+      }
+    }
   },
 
   computed: {
@@ -231,7 +244,7 @@ export default {
         { value: 'slovakia', label: 'Slovakia' },
         { value: 'ghana', label: 'Ghana' },
         { value: 'brazil', label: 'Brazil' }
-      ];
+      ]
     },
 
     schedule() {
@@ -239,7 +252,7 @@ export default {
         { value: 'daily', label: 'Daily' },
         { value: 'weekly', label: 'Weekly' },
         { value: 'monthly', label: 'Montly' }
-      ];
+      ]
     }
   },
 
@@ -254,7 +267,7 @@ export default {
       email: { email },
       message: { required },
       schedule: { required },
-      terms: { checked: value => !!value }
+      terms: { checked: (value) => !!value }
     },
     secondaryProfile: {
       name: {
@@ -266,8 +279,11 @@ export default {
       email: { email },
       message: { required },
       schedule: { required },
-      terms: { checked: value => !!value }
+      terms: { checked: (value) => !!value }
     }
   }
-};
+}
 </script>
+<style>
+@import 'https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css';
+</style>

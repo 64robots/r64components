@@ -11,7 +11,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "node_modules/.bin/eslint ./",
-    "serve": "vue-cli-service serve src/serve-dev.js",
+    "serve": "vue-cli-service serve src/dev.js",
     "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
     "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
@@ -41,7 +41,8 @@
     "rollup-plugin-terser": "^4.0.4",
     "rollup-plugin-vue": "4.7.1",
     "vue": "^2.6.11",
-    "vue-template-compiler": "^2.6.4"
+    "vue-template-compiler": "^2.6.4",
+    "vuelidate": "^0.7.5"
   },
   "peerDependencies": {
     "vue": "^2.6.11"
