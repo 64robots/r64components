@@ -1,16 +1,16 @@
-import { storiesOf } from "@storybook/vue";
-import { action } from "@storybook/addon-actions";
-import { Center } from "../stories/_decorators";
+import { storiesOf } from '@storybook/vue'
+import { action } from '@storybook/addon-actions'
+import { Center } from '../stories/_decorators'
 
 
-import R64Button from "../src/components/R64Button.vue";
+import R64Button from '../src/components/R64Button.vue'
 
-storiesOf("R64Button", module)
+storiesOf('R64Button', module)
   .addDecorator(Center)
-  .add("Variants", () => ({
+  .add('Variants', () => ({
     ethods: {
       submit() {
-        action("emit click")(null);
+        action('emit click')(null)
       }
     },
     components: { R64Button },
@@ -25,10 +25,10 @@ storiesOf("R64Button", module)
       </div>
     `
   }))
-  .add("Small", () => ({
+  .add('Small', () => ({
     methods: {
       submit() {
-        action("emit click")(null);
+        action('emit click')(null)
       }
     },
     components: { R64Button },
@@ -43,10 +43,10 @@ storiesOf("R64Button", module)
       </div>
     `
   }))
-  .add("Outline", () => ({
+  .add('Outline', () => ({
     methods: {
       submit() {
-        action("emit click")(null);
+        action('emit click')(null)
       }
     },
     components: { R64Button },
@@ -61,10 +61,10 @@ storiesOf("R64Button", module)
       </div>
     `
   }))
-  .add("Full width", () => ({
+  .add('Full width', () => ({
     methods: {
       submit() {
-        action("emit click")(null);
+        action('emit click')(null)
       }
     },
     components: { R64Button },
@@ -78,4 +78,4 @@ storiesOf("R64Button", module)
         <R64Button class="my-3" full disabled error>Error disabled</R64Button>
       </div>
     `
-  }));
+  }))

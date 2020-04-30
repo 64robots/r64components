@@ -8,4 +8,4 @@ export default {
   errorClass: 'border border-red-500 bg-white',
   disabledClass: 'opacity-50',
   errorMessageClass: 'mt-1 text-sm text-red-500'
-};
+}

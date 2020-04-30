@@ -15,4 +15,4 @@ export default {
   smallClass: 'font-normal py-1 px-5',
   fullClass: 'w-full',
   normalSizeClass: 'font-semibold py-2 px-6'
-};
+}

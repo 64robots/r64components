@@ -1,11 +1,11 @@
-import { storiesOf } from "@storybook/vue";
-import { Center } from "../stories/_decorators";
+import { storiesOf } from '@storybook/vue'
+import { Center } from '../stories/_decorators'
 
-import R64Input from "../src/components/R64Input.vue";
+import R64Input from '../src/components/R64Input.vue'
 
-storiesOf("R64Input", module)
+storiesOf('R64Input', module)
   .addDecorator(Center)
-  .add("Primary and secondary state", () => ({
+  .add('Primary and secondary state', () => ({
     components: { R64Input },
     template: `
       <div class="container mx-auto py-6 px-24 flex flex-wrap items-center justify-around">
@@ -18,10 +18,10 @@ storiesOf("R64Input", module)
         </div>
         `
   }))
-  .add("Error state", () => ({
+  .add('Error state', () => ({
     components: { R64Input },
     mounted() {
-      this.$refs.error.hasInput = true;
+      this.$refs.error.hasInput = true
     },
     template: `
       <div class="container mx-auto py-6 px-24 flex flex-wrap items-center justify-around">
@@ -29,7 +29,7 @@ storiesOf("R64Input", module)
       </div>
         `
   }))
-  .add("Disabled", () => ({
+  .add('Disabled', () => ({
     components: { R64Input },
     template: `
       <div class="container mx-auto py-6 px-24 flex flex-wrap items-center justify-around">
@@ -39,4 +39,4 @@ storiesOf("R64Input", module)
         <R64Input class="px-3 w-1/2" label="Email" value="jon@doe.com" help="Any text might help the user to fill the input" disabled/>
       </div>
     `
-  }));
+  }))
