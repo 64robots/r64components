@@ -1,11 +1,11 @@
-import { storiesOf } from "@storybook/vue";
-import { Center } from "../stories/_decorators";
+import { storiesOf } from '@storybook/vue'
+import { Center } from '../stories/_decorators'
 
-import R64Checkbox from "../src/components/R64Checkbox.vue";
+import R64Checkbox from '../src/components/R64Checkbox.vue'
 
-storiesOf("R64Checkbox", module)
+storiesOf('R64Checkbox', module)
   .addDecorator(Center)
-  .add("Variants", () => ({
+  .add('Variants', () => ({
     components: { R64Checkbox },
     template: `
       <div class="container mx-auto py-6 flex flex-wrap items-center justify-center">
@@ -23,4 +23,4 @@ storiesOf("R64Checkbox", module)
         <R64Checkbox class="w-1/2 mb-5 px-3" error label="error checked" :value="true" error-message="Introduce a valid user input" />
       </div>
     `
-  }));
+  }))

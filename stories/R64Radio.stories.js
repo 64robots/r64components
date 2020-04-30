@@ -1,11 +1,11 @@
-import { storiesOf } from "@storybook/vue";
-import { Center } from "../stories/_decorators";
+import { storiesOf } from '@storybook/vue'
+import { Center } from '../stories/_decorators'
 
-import R64Radio from "../src/components/R64Radio.vue";
+import R64Radio from '../src/components/R64Radio.vue'
 
-storiesOf("R64Radio", module)
+storiesOf('R64Radio', module)
   .addDecorator(Center)
-  .add("Variants", () => ({
+  .add('Variants', () => ({
     components: { R64Radio },
     template: `
       <div class="container mx-auto py-6 flex flex-col">
@@ -22,4 +22,4 @@ storiesOf("R64Radio", module)
         <R64Radio label="Radio" disabled error name="radio_error_disabled" value="checked" radioValue="checked" />
       </div>
     `
-  }));
+  }))

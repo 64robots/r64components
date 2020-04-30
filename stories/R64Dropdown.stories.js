@@ -1,11 +1,11 @@
-import { storiesOf } from "@storybook/vue";
-import { Center } from "../stories/_decorators";
+import { storiesOf } from '@storybook/vue'
+import { Center } from '../stories/_decorators'
 
-import R64Dropdown from "../src/components/R64Dropdown.vue";
+import R64Dropdown from '../src/components/R64Dropdown.vue'
 
-storiesOf("R64Dropdown", module)
+storiesOf('R64Dropdown', module)
   .addDecorator(Center)
-  .add("Variants", () => ({
+  .add('Variants', () => ({
     components: { R64Dropdown },
     template: `
       <div class="container mx-auto py-6 flex flex-wrap items-center justify-center">
@@ -19,4 +19,4 @@ storiesOf("R64Dropdown", module)
         </R64Dropdown>
       </div>
     `
-  }));
+  }))
