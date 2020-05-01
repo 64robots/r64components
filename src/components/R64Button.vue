@@ -1,7 +1,9 @@
 <template>
   <button :class="buttonClasses" :type="type" @click="onClick" @blur="onBlur" @focus="onFocus">
-    <slot v-if="!busy" />
-    <div v-else class="loader" />
+    <slot v-if="!loading" />
+    <slot v-else name="loading">
+      <div class="loader" :class="{'loader-outline': outline}" />
+    </slot>
   </button>
 </template>
 
@@ -31,7 +33,7 @@ export default {
       type: String,
       default: "button"
     },
-    busy: {
+    loading: {
       type: Boolean,
       default: false
     },
@@ -184,6 +186,9 @@ export default {
   border-left: 0.2rem solid #ffffff;
   transform: translateZ(0);
   animation: load8 1.1s infinite linear;
+}
+.loader-outline {
+  border-left: 0.2rem solid #1a202c;
 }
 @-webkit-keyframes load8 {
   0% {
