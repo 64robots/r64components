@@ -9,6 +9,7 @@
 <R64Button secondary>Secondary button</R64Button>
 <R64Button outline>Outline button</R64Button>
 <R64Button full>Full width button</R64Button>
+<R64Button loading>Loading button</R64Button>
 ```
 
 ### Events

@@ -77,7 +77,7 @@
           </div>
           <div class="max-w-sm flex justify-between mt-12">
             <R64Button outline>Back</R64Button>
-            <R64Button :disabled="$v.profile.$invalid">Submit</R64Button>
+            <R64Button :loading="loading" :disabled="$v.profile.$invalid">Submit</R64Button>
           </div>
         </div>
         <div class="w-1/2">
@@ -175,6 +175,7 @@
             <R64Button
               :disabled="$v.secondaryProfile.$invalid"
               secondary
+              :loading="loading"
             >
               Submit
             </R64Button>
@@ -231,7 +232,8 @@ export default {
         candidates: true,
         sms: false,
         terms: false
-      }
+      },
+      loading: false
     }
   },
 
@@ -281,7 +283,14 @@ export default {
       schedule: { required },
       terms: { checked: (value) => !!value }
     }
-  }
+  },
+
+  mounted() {
+    this.loading = true
+    setTimeout(() => {
+      this.loading = false
+    }, 3000);
+  },
 }
 </script>
 <style>
