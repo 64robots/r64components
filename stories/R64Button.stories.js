@@ -8,7 +8,7 @@ import R64Button from '../src/components/R64Button.vue'
 storiesOf('R64Button', module)
   .addDecorator(Center)
   .add('Variants', () => ({
-    ethods: {
+    methods: {
       submit() {
         action('emit click')(null)
       }
@@ -76,6 +76,24 @@ storiesOf('R64Button', module)
         <R64Button class="my-3" full disabled>Primary disabled</R64Button>
         <R64Button class="my-3" full disabled secondary>Secondary disabled</R64Button>
         <R64Button class="my-3" full disabled error>Error disabled</R64Button>
+      </div>
+    `
+  }))
+  .add('Loading', () => ({
+    methods: {
+      submit() {
+        action('emit click')(null)
+      }
+    },
+    components: { R64Button },
+    template: `
+      <div class="container mx-auto py-6 flex flex-col items-center justify-around">
+        <R64Button class="my-3" full loading>Primary loading</R64Button>
+        <R64Button class="my-3" full loading secondary>Secondary loading</R64Button>
+        <R64Button class="my-3" full loading outline>Error loading</R64Button>
+        <R64Button class="my-3" full loading disabled>Primary loading disabled</R64Button>
+        <R64Button class="my-3" full loading disabled secondary>Secondary loading disabled</R64Button>
+        <R64Button class="my-3" full loading disabled error>Error loading disabled</R64Button>
       </div>
     `
   }))
