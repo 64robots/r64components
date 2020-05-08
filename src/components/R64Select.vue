@@ -1,5 +1,5 @@
 <template>
-  <div :class="[classes.wrapper]">
+  <div class="r64__select" :class="[classes.wrapper]">
     <label v-if="label" :class="classes.label">
       {{ label }}
     </label>
@@ -30,10 +30,10 @@
 </template>
 
 <script>
-import formInput from "../mixins/formInput";
+import formInput from '../mixins/formInput'
 
 export default {
-  name: "R64Select",
+  name: 'R64Select',
 
   mixins: [formInput],
 
@@ -44,7 +44,7 @@ export default {
     },
     name: {
       type: String,
-      default: "r64-select"
+      default: 'r64-select'
     },
     placeholder: {
       type: [String, Number],
@@ -56,7 +56,7 @@ export default {
     },
     value: {
       type: [Date, String, Number],
-      default: ""
+      default: ''
     },
     secondary: {
       type: Boolean,
@@ -68,41 +68,41 @@ export default {
     return {
       localValue: this.value,
       rawValue: this.value
-    };
+    }
   },
 
   watch: {
     value(newVal) {
-      this.localValue = newVal;
+      this.localValue = newVal
     },
 
     localValue(newVal, oldVal) {
       if (newVal !== oldVal) {
         if (this.v) this.v.$touch()
-        this.$emit("input", newVal);
+        this.$emit('input', newVal)
       }
     }
   },
 
   methods: {
     onChange(event) {
-      this.localValue = event.target.value;
-      this.$emit("change", event.target.value);
+      this.localValue = event.target.value
+      this.$emit('change', event.target.value)
     },
 
     onClick() {
       const isFocused =
         document.activeElement === this.$refs.select ||
-        document.activeElement === this.$refs.select.$el;
+        document.activeElement === this.$refs.select.$el
       if (isFocused) {
-        this.$emit("focus", event);
+        this.$emit('focus', event)
       }
     }
   }
-};
+}
 </script>
 <style>
-select {
+.r64__select select {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M7 7l3-3 3 3m0 6l-3 3-3-3' stroke='%239fa6b2' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 1rem center;

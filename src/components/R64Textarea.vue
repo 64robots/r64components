@@ -1,5 +1,5 @@
 <template>
-  <div :class="[classes.wrapper]">
+  <div class="r64__textarea" :class="[classes.wrapper]">
     <label :for="inputId" :class="classes.label">
       {{ label }}
     </label>
@@ -16,7 +16,7 @@
       @input="onInput"
       @keydown="isTyping"
       @keyup="onKeyUp"
-    ></textarea>
+    />
     <p v-if="hasFeedback" :class="feedbackClass">
       {{ feedback }}
     </p>
@@ -27,7 +27,7 @@
 import formInput from '../mixins/formInput'
 
 export default {
-  name: "R64Textarea",
+  name: 'R64Textarea',
 
   mixins: [formInput],
 
@@ -42,11 +42,11 @@ export default {
     },
     type: {
       type: String,
-      default: "text"
+      default: 'text'
     },
     value: {
       type: [String, Number],
-      default: ""
+      default: ''
     },
     secondary: {
       type: Boolean,
@@ -54,20 +54,20 @@ export default {
     },
     help: {
       type: String,
-      default: ""
+      default: ''
     },
     placeholder: {
       type: [String, Number],
-      default: ""
+      default: ''
     },
     v: {
       type: Object,
-      default: null,
+      default: null
     },
     errorMessage: {
       type: String,
-      default: ""
-    },
+      default: ''
+    }
   },
 
   data() {
@@ -76,64 +76,66 @@ export default {
       localValue: this.value,
       typing: false,
       focus: this.disabled
-    };
+    }
   },
 
   computed: {
     textareaId() {
       if (this.id) {
-        return this.id;
+        return this.id
       }
 
-      return this._uid;
+      return this._uid
     },
 
     hasFeedback() {
-      return this.hasError || this.help;
+      return this.hasError || this.help
     },
 
     feedback() {
       if (this.hasError) {
-        return this.errorMessage;
+        return this.errorMessage
       }
 
-      return this.help;
+      return this.help
     },
 
     feedbackClass() {
-      return this.hasError ? this.classes.errorMessage : this.classes.helpMessage;
+      return this.hasError
+        ? this.classes.errorMessage
+        : this.classes.helpMessage
     }
   },
 
   watch: {
     value(newVal) {
-      this.localValue = newVal;
+      this.localValue = newVal
     },
 
     localValue(newVal, oldVal) {
       if (newVal !== oldVal) {
-        this.$emit("input", newVal);
+        this.$emit('input', newVal)
       }
-    },
+    }
   },
 
   destroyed() {
-    clearTimeout(this.typing);
+    clearTimeout(this.typing)
   },
 
   methods: {
     onBlur(event) {
-      this.focus = false;
-      this.$emit("blur", event);
+      this.focus = false
+      this.$emit('blur', event)
     },
 
     onFocus(event) {
-      this.focus = true;
-      this.$emit("focus", event);
+      this.focus = true
+      this.$emit('focus', event)
     },
 
     onInput() {
-      this.hasInput = this.localValue.length;
+      this.hasInput = this.localValue.length
     },
 
     onKeyUp(event) {
@@ -142,21 +144,21 @@ export default {
 
     isTyping(event) {
       this.$emit('keydown', event)
-      if (event.key === 'Tab') return;
+      if (event.key === 'Tab') return
 
       if (this.typing) {
-        clearTimeout(this.typing);
+        clearTimeout(this.typing)
       }
 
       const id = setTimeout(() => {
-        this.typing = false;
+        this.typing = false
         if (this.v && this.hasInput) {
-          this.v.$touch();
+          this.v.$touch()
         }
-      }, 750);
+      }, 750)
 
-      this.typing = id;
+      this.typing = id
     }
   }
-};
+}
 </script>
