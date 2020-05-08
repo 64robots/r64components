@@ -14,5 +14,5 @@ export default {
     'border-red-500 text-red-500 hover:bg-red-500 hover:text-white',
   smallClass: 'font-normal py-1 px-5',
   fullClass: 'w-full',
-  normalSizeClass: 'font-semibold py-2 px-6'
+  normalSizeClass: 'font-semibold py-2 px-6',
 }
