@@ -26,16 +26,17 @@ const {
   smallClass,
   fullClass,
   disabledClass,
-  normalSizeClass
+  normalSizeClass,
+  loadingClass
 } = R64Button;
 var script = {
-  name: "R64Button",
+  name: 'R64Button',
   props: {
     type: {
       type: String,
-      default: "button"
+      default: 'button'
     },
-    busy: {
+    loading: {
       type: Boolean,
       default: false
     },
@@ -106,6 +107,10 @@ var script = {
     normalSizeClass: {
       type: String,
       default: normalSizeClass
+    },
+    loadingClass: {
+      type: String,
+      default: loadingClass
     }
   },
   computed: {
@@ -153,6 +158,14 @@ var script = {
 
     normalSize() {
       return !this.small;
+    },
+
+    loadingClasses() {
+      if (this.loadingClass) {
+        return this.loadingClass;
+      }
+
+      return this.outline ? 'loader-outline' : '';
     }
 
   },
@@ -319,6 +332,7 @@ var __vue_render__ = function () {
   var _c = _vm._self._c || _h;
 
   return _c('button', {
+    staticClass: "r64__button",
     class: _vm.buttonClasses,
     attrs: {
       "type": _vm.type
@@ -328,9 +342,10 @@ var __vue_render__ = function () {
       "blur": _vm.onBlur,
       "focus": _vm.onFocus
     }
-  }, [!_vm.busy ? _vm._t("default") : _c('div', {
-    staticClass: "loader"
-  })], 2);
+  }, [!_vm.loading ? _vm._t("default") : _vm._t("loading", [_c('div', {
+    staticClass: "loader",
+    class: _vm.loadingClasses
+  })])], 2);
 };
 
 var __vue_staticRenderFns__ = [];
@@ -338,8 +353,8 @@ var __vue_staticRenderFns__ = [];
 
 const __vue_inject_styles__ = function (inject) {
   if (!inject) return;
-  inject("data-v-4580da6c_0", {
-    source: ".loader,.loader:after{display:block;border-radius:50%;width:24px;height:24px}.loader{position:relative;border-top:.2rem solid rgba(255,255,255,.2);border-right:.2rem solid rgba(255,255,255,.2);border-bottom:.2rem solid rgba(255,255,255,.2);border-left:.2rem solid #fff;transform:translateZ(0);animation:load8 1.1s infinite linear}@-webkit-keyframes load8{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes load8{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}",
+  inject("data-v-211a6710_0", {
+    source: ".loader,.loader:after{display:block;border-radius:50%;width:24px;height:24px}.loader{position:relative;border-top:.2rem solid rgba(255,255,255,.2);border-right:.2rem solid rgba(255,255,255,.2);border-bottom:.2rem solid rgba(255,255,255,.2);border-left:.2rem solid #fff;transform:translateZ(0);animation:load8 1.1s infinite linear}.loader-outline{border-left:.2rem solid #1a202c}@-webkit-keyframes load8{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes load8{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}",
     map: undefined,
     media: undefined
   });
@@ -373,26 +388,26 @@ var R64Checkbox = {
 };
 
 var R64Radio = {
-  wrapperClass: "mb-1 h-12",
-  labelClass: "ml-2 text-black",
-  baseClass: "appearance-none outline-none select-none w-4 h-4 bg-white border border-gray-400 rounded-full transition duration-150 ease-in-out focus:shadow-outline focus:border-blue-400",
-  primaryClass: "text-black",
-  secondaryClass: "text-indigo-500",
-  errorClass: "text-red-500",
-  disabledClass: "opacity-50",
-  errorMessageClass: "mt-1 text-sm text-red-500"
+  wrapperClass: 'mb-1 h-12',
+  labelClass: 'ml-2 text-black',
+  baseClass: 'appearance-none outline-none select-none w-4 h-4 bg-white border border-gray-400 rounded-full transition duration-150 ease-in-out focus:shadow-outline focus:border-blue-400',
+  primaryClass: 'text-black',
+  secondaryClass: 'text-indigo-500',
+  errorClass: 'text-red-500',
+  disabledClass: 'opacity-50',
+  errorMessageClass: 'mt-1 text-sm text-red-500'
 };
 
 var R64Input = {
-  wrapperClass: "mb-1 h-24",
-  labelClass: "block leading-tight text-gray-800",
-  baseClass: "leading-snug outline-none mt-1 px-3 py-2 block w-full text-gray-900 rounded-md focus:shadow-outline focus:border-blue-400",
-  primaryClass: "border border-gray-400 placeholder-gray-600",
-  secondaryClass: "border border-indigo-300 placeholder-indigo-400",
-  errorClass: "border border-red-600 placeholder-red-400",
-  disabledClass: "border border-gray-400 bg-gray-100 text-gray-900 cursor-not-allowed opacity-50",
-  helpMessageClass: "mt-1 text-sm text-gray-600",
-  errorMessageClass: "mt-1 text-sm text-red-500"
+  wrapperClass: 'mb-1 h-24',
+  labelClass: 'block leading-tight text-gray-800',
+  baseClass: 'leading-snug outline-none mt-1 px-3 py-2 block w-full text-gray-900 rounded-md focus:shadow-outline focus:border-blue-400',
+  primaryClass: 'border border-gray-400 placeholder-gray-600',
+  secondaryClass: 'border border-indigo-300 placeholder-indigo-400',
+  errorClass: 'border border-red-600 placeholder-red-400',
+  disabledClass: 'border border-gray-400 bg-gray-100 text-gray-900 cursor-not-allowed opacity-50',
+  helpMessageClass: 'mt-1 text-sm text-gray-600',
+  errorMessageClass: 'mt-1 text-sm text-red-500'
 };
 
 var R64Select = {
@@ -407,15 +422,15 @@ var R64Select = {
 };
 
 var R64Textarea = {
-  wrapperClass: "mb-1 h-auto",
-  labelClass: "block leading-tight text-gray-800",
-  baseClass: "leading-snug outline-none mt-1 px-3 py-2 block w-full text-gray-900 rounded-md focus:shadow-outline focus:border-blue-400",
-  primaryClass: "border border-gray-400 placeholder-gray-600",
-  secondaryClass: "border border-indigo-300 placeholder-indigo-400",
-  errorClass: "border border-red-600 placeholder-red-400",
-  disabledClass: "border border-gray-400 bg-gray-100 text-gray-900 cursor-not-allowed opacity-50",
-  helpMessageClass: "mt-1 text-sm text-gray-600",
-  errorMessageClass: "mt-1 text-sm text-red-500"
+  wrapperClass: 'mb-1 h-auto',
+  labelClass: 'block leading-tight text-gray-800',
+  baseClass: 'leading-snug outline-none mt-1 px-3 py-2 block w-full text-gray-900 rounded-md focus:shadow-outline focus:border-blue-400',
+  primaryClass: 'border border-gray-400 placeholder-gray-600',
+  secondaryClass: 'border border-indigo-300 placeholder-indigo-400',
+  errorClass: 'border border-red-600 placeholder-red-400',
+  disabledClass: 'border border-gray-400 bg-gray-100 text-gray-900 cursor-not-allowed opacity-50',
+  helpMessageClass: 'mt-1 text-sm text-gray-600',
+  errorMessageClass: 'mt-1 text-sm text-red-500'
 };
 
 const defaultTheme = {
@@ -551,7 +566,7 @@ var formInput = {
 
 //
 var script$1 = {
-  name: "R64Checkbox",
+  name: 'R64Checkbox',
   mixins: [formInput],
   props: {
     label: {
@@ -588,6 +603,7 @@ var __vue_render__$1 = function () {
   var _c = _vm._self._c || _h;
 
   return _c('div', {
+    staticClass: "r64__button",
     class: _vm.classes.wrapper
   }, [_c('label', {
     staticClass: "inline-flex items-center"
@@ -615,8 +631,8 @@ var __vue_staticRenderFns__$1 = [];
 
 const __vue_inject_styles__$1 = function (inject) {
   if (!inject) return;
-  inject("data-v-a302177a_0", {
-    source: "input[type=checkbox]:checked{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4a1 1 0 00-1.414-1.414L7 8.586 5.707 7.293z'/%3E%3C/svg%3E\");border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:50%}",
+  inject("data-v-7bc3e6c2_0", {
+    source: ".r64__button input:checked{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4a1 1 0 00-1.414-1.414L7 8.586 5.707 7.293z'/%3E%3C/svg%3E\");border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:50%}",
     map: undefined,
     media: undefined
   });
@@ -640,7 +656,7 @@ var R64Checkbox$1 = normalizeComponent_1({
 
 //
 var script$2 = {
-  name: "R64Input",
+  name: 'R64Input',
   mixins: [formInput],
   props: {
     id: {
@@ -653,11 +669,11 @@ var script$2 = {
     },
     type: {
       type: String,
-      default: "text"
+      default: 'text'
     },
     value: {
       type: [String, Number],
-      default: ""
+      default: ''
     },
     secondary: {
       type: Boolean,
@@ -665,11 +681,11 @@ var script$2 = {
     },
     help: {
       type: String,
-      default: ""
+      default: ''
     },
     placeholder: {
       type: [String, Number],
-      default: ""
+      default: ''
     },
     v: {
       type: Object,
@@ -677,7 +693,7 @@ var script$2 = {
     },
     errorMessage: {
       type: String,
-      default: ""
+      default: ''
     }
   },
 
@@ -700,10 +716,10 @@ var script$2 = {
     },
 
     internalType() {
-      const textTypes = ["date", "phone", "email"];
+      const textTypes = ['date', 'phone', 'email'];
 
       if (textTypes.includes(this.type)) {
-        return "text";
+        return 'text';
       }
 
       return this.type;
@@ -733,7 +749,7 @@ var script$2 = {
 
     localValue(newVal, oldVal) {
       if (newVal !== oldVal) {
-        this.$emit("input", newVal);
+        this.$emit('input', newVal);
       }
     }
 
@@ -746,12 +762,12 @@ var script$2 = {
   methods: {
     onBlur(event) {
       this.focus = false;
-      this.$emit("blur", event);
+      this.$emit('blur', event);
     },
 
     onFocus(event) {
       this.focus = true;
-      this.$emit("focus", event);
+      this.$emit('focus', event);
     },
 
     onInput() {
@@ -795,6 +811,7 @@ var __vue_render__$2 = function () {
   var _c = _vm._self._c || _h;
 
   return _c('div', {
+    staticClass: "r64__input",
     class: [_vm.classes.wrapper]
   }, [_c('label', {
     class: _vm.classes.label,
@@ -932,7 +949,7 @@ var R64Input$1 = normalizeComponent_1({
 
 //
 var script$3 = {
-  name: "R64Textarea",
+  name: 'R64Textarea',
   mixins: [formInput],
   props: {
     id: {
@@ -945,11 +962,11 @@ var script$3 = {
     },
     type: {
       type: String,
-      default: "text"
+      default: 'text'
     },
     value: {
       type: [String, Number],
-      default: ""
+      default: ''
     },
     secondary: {
       type: Boolean,
@@ -957,11 +974,11 @@ var script$3 = {
     },
     help: {
       type: String,
-      default: ""
+      default: ''
     },
     placeholder: {
       type: [String, Number],
-      default: ""
+      default: ''
     },
     v: {
       type: Object,
@@ -969,7 +986,7 @@ var script$3 = {
     },
     errorMessage: {
       type: String,
-      default: ""
+      default: ''
     }
   },
 
@@ -1015,7 +1032,7 @@ var script$3 = {
 
     localValue(newVal, oldVal) {
       if (newVal !== oldVal) {
-        this.$emit("input", newVal);
+        this.$emit('input', newVal);
       }
     }
 
@@ -1028,12 +1045,12 @@ var script$3 = {
   methods: {
     onBlur(event) {
       this.focus = false;
-      this.$emit("blur", event);
+      this.$emit('blur', event);
     },
 
     onFocus(event) {
       this.focus = true;
-      this.$emit("focus", event);
+      this.$emit('focus', event);
     },
 
     onInput() {
@@ -1077,6 +1094,7 @@ var __vue_render__$3 = function () {
   var _c = _vm._self._c || _h;
 
   return _c('div', {
+    staticClass: "r64__textarea",
     class: [_vm.classes.wrapper]
   }, [_c('label', {
     class: _vm.classes.label,
@@ -1142,7 +1160,7 @@ var R64Textarea$1 = normalizeComponent_1({
 
 //
 var script$4 = {
-  name: "R64Radio",
+  name: 'R64Radio',
   mixins: [formInput],
   props: {
     label: {
@@ -1186,6 +1204,7 @@ var __vue_render__$4 = function () {
   var _c = _vm._self._c || _h;
 
   return _c('div', {
+    staticClass: "r64__radio",
     class: _vm.classes.wrapper
   }, [_c('label', {
     staticClass: "inline-flex items-center"
@@ -1217,8 +1236,8 @@ var __vue_staticRenderFns__$4 = [];
 
 const __vue_inject_styles__$4 = function (inject) {
   if (!inject) return;
-  inject("data-v-f469debc_0", {
-    source: "input[type=radio]:checked{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='3'/%3E%3C/svg%3E\");border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:50%}",
+  inject("data-v-6388508c_0", {
+    source: ".r64__radio input:checked{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='3'/%3E%3C/svg%3E\");border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:50%}",
     map: undefined,
     media: undefined
   });
@@ -1242,7 +1261,7 @@ var R64Radio$1 = normalizeComponent_1({
 
 //
 var script$5 = {
-  name: "R64Select",
+  name: 'R64Select',
   mixins: [formInput],
   props: {
     label: {
@@ -1251,7 +1270,7 @@ var script$5 = {
     },
     name: {
       type: String,
-      default: "r64-select"
+      default: 'r64-select'
     },
     placeholder: {
       type: [String, Number],
@@ -1263,7 +1282,7 @@ var script$5 = {
     },
     value: {
       type: [Date, String, Number],
-      default: ""
+      default: ''
     },
     secondary: {
       type: Boolean,
@@ -1286,7 +1305,7 @@ var script$5 = {
     localValue(newVal, oldVal) {
       if (newVal !== oldVal) {
         if (this.v) this.v.$touch();
-        this.$emit("input", newVal);
+        this.$emit('input', newVal);
       }
     }
 
@@ -1294,14 +1313,14 @@ var script$5 = {
   methods: {
     onChange(event) {
       this.localValue = event.target.value;
-      this.$emit("change", event.target.value);
+      this.$emit('change', event.target.value);
     },
 
     onClick() {
       const isFocused = document.activeElement === this.$refs.select || document.activeElement === this.$refs.select.$el;
 
       if (isFocused) {
-        this.$emit("focus", event);
+        this.$emit('focus', event);
       }
     }
 
@@ -1320,6 +1339,7 @@ var __vue_render__$5 = function () {
   var _c = _vm._self._c || _h;
 
   return _c('div', {
+    staticClass: "r64__select",
     class: [_vm.classes.wrapper]
   }, [_vm.label ? _c('label', {
     class: _vm.classes.label
@@ -1370,8 +1390,8 @@ var __vue_staticRenderFns__$5 = [];
 
 const __vue_inject_styles__$5 = function (inject) {
   if (!inject) return;
-  inject("data-v-367a5979_0", {
-    source: "select{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M7 7l3-3 3 3m0 6l-3 3-3-3' stroke='%239fa6b2' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\");background-repeat:no-repeat;background-position:right 1rem center;background-size:1.5em 1.5em}",
+  inject("data-v-6f97d1b5_0", {
+    source: ".r64__select select{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M7 7l3-3 3 3m0 6l-3 3-3-3' stroke='%239fa6b2' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\");background-repeat:no-repeat;background-position:right 1rem center;background-size:1.5em 1.5em}",
     map: undefined,
     media: undefined
   });
