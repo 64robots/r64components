@@ -1,14 +1,9 @@
 <template>
-  <button
-    class="r64__button"
-    :class="buttonClasses"
-    :type="type"
-    @click="onClick"
-    @blur="onBlur"
-    @focus="onFocus"
-  >
-    <slot v-if="!busy" />
-    <div v-else class="loader" />
+  <button class="r64__button" :class="buttonClasses" :type="type" @click="onClick" @blur="onBlur" @focus="onFocus">
+    <slot v-if="!loading" />
+    <slot v-else name="loading">
+      <div class="loader" :class="loadingClasses" />
+    </slot>
   </button>
 </template>
 
@@ -27,8 +22,9 @@ const {
   smallClass,
   fullClass,
   disabledClass,
-  normalSizeClass
-} = R64ButtonClasses
+  normalSizeClass,
+  loadingClass,
+} = R64ButtonClasses;
 
 export default {
   name: 'R64Button',
@@ -38,7 +34,7 @@ export default {
       type: String,
       default: 'button'
     },
-    busy: {
+    loading: {
       type: Boolean,
       default: false
     },
@@ -109,6 +105,10 @@ export default {
     normalSizeClass: {
       type: String,
       default: normalSizeClass
+    },
+    loadingClass: {
+      type: String,
+      default: loadingClass
     }
   },
 
@@ -156,7 +156,14 @@ export default {
     },
 
     normalSize() {
-      return !this.small
+      return !this.small;
+    },
+
+    loadingClasses() {
+      if (this.loadingClass) {
+        return this.loadingClass
+      }
+      return this.outline ? 'loader-outline' : ''
     }
   },
 
@@ -191,6 +198,9 @@ export default {
   border-left: 0.2rem solid #ffffff;
   transform: translateZ(0);
   animation: load8 1.1s infinite linear;
+}
+.loader-outline {
+  border-left: 0.2rem solid #1a202c;
 }
 @-webkit-keyframes load8 {
   0% {
