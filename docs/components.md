@@ -30,6 +30,7 @@
 | outline   | Boolean | false         |
 | full      | Boolean | false         |
 | small     | Boolean | false         |
+| loading   | Boolean | false         |
 
 ### Class style props
 
@@ -45,6 +46,7 @@
 - fullClass
 - disabledClass
 - normalSizeClass
+- loadingClass
 
 ### Default theme settings
 
@@ -61,7 +63,8 @@ export default {
   errorOutlineClass: "border-red-500 text-red-500 hover:bg-red-500 hover:text-white",
   smallClass: "font-normal py-1 px-5",
   fullClass: "w-full",
-  normalSizeClass: "font-semibold py-2 px-6"
+  normalSizeClass: "font-semibold py-2 px-6",
+  loadingClass: '',
 }
 ```
 
