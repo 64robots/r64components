@@ -1,12 +1,19 @@
 <template>
-  <button :class="buttonClasses" :type="type" @click="onClick" @blur="onBlur" @focus="onFocus">
+  <button
+    class="r64__button"
+    :class="buttonClasses"
+    :type="type"
+    @click="onClick"
+    @blur="onBlur"
+    @focus="onFocus"
+  >
     <slot v-if="!busy" />
     <div v-else class="loader" />
   </button>
 </template>
 
 <script>
-import R64ButtonClasses from "../themes/default/R64Button";
+import R64ButtonClasses from '../themes/default/R64Button'
 
 const {
   baseClass,
@@ -21,15 +28,15 @@ const {
   fullClass,
   disabledClass,
   normalSizeClass
-} = R64ButtonClasses;
+} = R64ButtonClasses
 
 export default {
-  name: "R64Button",
+  name: 'R64Button',
 
   props: {
     type: {
       type: String,
-      default: "button"
+      default: 'button'
     },
     busy: {
       type: Boolean,
@@ -107,49 +114,49 @@ export default {
 
   computed: {
     buttonClasses() {
-      const classes = [baseClass];
+      const classes = [baseClass]
 
       // REFACTOR
       if (this.outline) {
-        classes.push(this.outlineClass);
+        classes.push(this.outlineClass)
         if (this.secondary) {
-          classes.push(this.secondaryOutlineClass);
+          classes.push(this.secondaryOutlineClass)
         } else if(this.error) {
           classes.push(this.errorOutlineClass)
         } else {
-          classes.push(this.primaryOutlineClass);
+          classes.push(this.primaryOutlineClass)
         }
       } else {
         if (this.secondary) {
-          classes.push(this.secondaryClass);
+          classes.push(this.secondaryClass)
         } else if(this.error) {
           classes.push(this.errorClass)
-          } else {
-          classes.push(this.primaryClass);
+        } else {
+          classes.push(this.primaryClass)
         }
       }
 
       if (this.small) {
-        classes.push(this.smallClass);
+        classes.push(this.smallClass)
       }
 
       if (this.full) {
-        classes.push(this.fullClass);
+        classes.push(this.fullClass)
       }
 
       if (this.disabled) {
-        classes.push(this.disabledClass);
+        classes.push(this.disabledClass)
       }
 
       if (this.normalSize) {
-        classes.push(this.normalSizeClass);
+        classes.push(this.normalSizeClass)
       }
 
-      return classes;
+      return classes
     },
 
     normalSize() {
-      return !this.small;
+      return !this.small
     }
   },
 
@@ -166,7 +173,7 @@ export default {
       this.$emit('focus', event)
     },
   }
-};
+}
 </script>
 <style>
 .loader,

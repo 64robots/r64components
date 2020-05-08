@@ -1,5 +1,5 @@
 <template>
-  <div :class="classes.wrapper">
+  <div class="r64__radio" :class="classes.wrapper">
     <label class="inline-flex items-center">
       <input
         type="radio"
@@ -10,7 +10,7 @@
         :checked="checked"
         :disabled="disabled"
         @click="$emit('click', radioValue)"
-      />
+      >
       <span :class="classes.label">{{ label }}</span>
     </label>
     <p v-if="hasError" :class="classes.errorMessage">{{ errorMessage }}</p>
@@ -20,7 +20,7 @@
 import formInput from '../mixins/formInput'
 
 export default {
-  name: "R64Radio",
+  name: 'R64Radio',
 
   mixins: [formInput],
 
@@ -48,13 +48,13 @@ export default {
   },
   computed: {
     checked() {
-      return this.value === this.radioValue;
+      return this.value === this.radioValue
     },
   }
-};
+}
 </script>
 <style>
-input[type="radio"]:checked {
+.r64__radio input:checked {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='3'/%3E%3C/svg%3E");
   border-color: transparent;
   background-color: currentColor;
