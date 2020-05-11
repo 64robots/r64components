@@ -202,6 +202,7 @@ And if you are using another validator you can use the error prop as a flag to t
 - disabledClass
 - errorMessageClass
 - helpMessageClass
+- withoutLabelClass
 
 ### Default theme settings
 
@@ -215,7 +216,8 @@ export default {
   errorClass: "border border-red-600 placeholder-red-400",
   disabledClass: "border border-gray-400 bg-gray-100 text-gray-900 cursor-not-allowed opacity-50",
   helpMessageClass: "mt-1 text-sm text-gray-600",
-  errorMessageClass: "mt-1 text-sm text-red-500"
+  errorMessageClass: "mt-1 text-sm text-red-500",
+  withoutLabelClass: "mb-1 h-auto",
 };
 ```
 
@@ -301,6 +303,7 @@ And if you are using another validator you can use the error prop as a flag to t
 - disabledClass
 - errorMessageClass
 - helpMessageClass
+- withoutLabelClass
 
 ### Default theme settings
 
@@ -314,7 +317,8 @@ export default {
   errorClass: "border border-red-600 placeholder-red-400",
   disabledClass: "border border-gray-400 bg-gray-100 text-gray-900 cursor-not-allowed opacity-50",
   helpMessageClass: "mt-1 text-sm text-gray-600",
-  errorMessageClass: "mt-1 text-sm text-red-500"
+  errorMessageClass: "mt-1 text-sm text-red-500",
+  withoutLabelClass: "mb-1 h-auto",
 };
 ```
 

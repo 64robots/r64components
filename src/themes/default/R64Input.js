@@ -9,5 +9,6 @@ export default {
   disabledClass:
     'border border-gray-400 bg-gray-100 text-gray-900 cursor-not-allowed opacity-50',
   helpMessageClass: 'mt-1 text-sm text-gray-600',
-  errorMessageClass: 'mt-1 text-sm text-red-500'
+  errorMessageClass: 'mt-1 text-sm text-red-500',
+  withoutLabelClass: 'h-auto mb-1'
 }
