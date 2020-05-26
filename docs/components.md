@@ -431,3 +431,49 @@ export default {
   errorMessageClass: "mt-1 text-sm text-red-500"
 };
 ```
+
+## R64Collapse
+
+### Basic example
+
+```html
+<R64Collapse
+  v-model="open"
+  header="Collapse header"
+>
+  <p>First Item</p>
+  <p>Second Item</p>
+  <p>Third Item</p>
+</R64Collapse>
+<R64Collapse
+  v-model="open"
+  disabled
+  header="Collapse header"
+>
+  <p>First Item</p>
+  <p>Second Item</p>
+  <p>Third Item</p>
+</R64Collapse>
+```
+
+### Props
+
+| Property    | Type             | Default value | Required |
+| ----------- | ---------------- | ------------- | -------- |
+| header       | String           | ''          | false    |
+| name        | String           | r64-collapse    | false    |
+| disabled   | Boolean          | false         | false    |
+
+### Class style props
+
+- baseClass
+- disabledClass
+
+### Default theme settings
+
+```javascript
+export default {
+  baseClass: "shadow rounded h-auto my-6 p-4",
+  disabledClass: "opacity-50",
+};
+```
