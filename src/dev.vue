@@ -74,6 +74,13 @@
               :v="$v.profile.terms"
               error-message="Terms and conditions must be accepted"
             />
+            <R64Collapse v-model="profile.collapse" header="Collapse">
+                <div>
+                    <p>Item One</p>
+                    <p>Item Two</p>
+                    <p>Item Three</p>
+                </div>
+            </R64Collapse>
           </div>
           <div class="max-w-sm flex justify-between mt-12">
             <R64Button outline>Back</R64Button>
@@ -169,6 +176,13 @@
               error-message="Terms and conditions must be accepted"
               secondary
             />
+            <R64Collapse secondary v-model="secondaryProfile.collapse" header="Collapse">
+                <div class="bg-indigo-500">
+                    <p>Item One</p>
+                    <p>Item Two</p>
+                    <p>Item Three</p>
+                </div>
+            </R64Collapse>
           </div>
           <div class="max-w-sm flex justify-between mt-12">
             <R64Button outline secondary>Back</R64Button>
@@ -194,6 +208,7 @@ import R64Select from '@/components/R64Select.vue'
 import R64Checkbox from '@/components/R64Checkbox.vue'
 import R64Radio from '@/components/R64Radio.vue'
 import R64Textarea from '@/components/R64Textarea.vue'
+import R64Collapse from '@/components/R64Collapse.vue'
 
 export default {
   name: 'App',
@@ -204,7 +219,8 @@ export default {
     R64Select,
     R64Checkbox,
     R64Radio,
-    R64Textarea
+    R64Textarea,
+    R64Collapse
   },
 
   data() {
@@ -219,7 +235,8 @@ export default {
         comments: false,
         candidates: true,
         sms: false,
-        terms: false
+        terms: false,
+        collapse: false
       },
       secondaryProfile: {
         name: '',
@@ -231,9 +248,10 @@ export default {
         comments: false,
         candidates: true,
         sms: false,
-        terms: false
+        terms: false,
+        collapse: false
       },
-      loading: false
+      loading: false,
     }
   },
 

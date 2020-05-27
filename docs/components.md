@@ -467,13 +467,17 @@ export default {
 ### Class style props
 
 - baseClass
+- primaryClass
+- secondaryClass
 - disabledClass
 
 ### Default theme settings
 
 ```javascript
 export default {
-  baseClass: "shadow rounded h-auto my-6 p-4",
+  baseClass: "shadow rounded h-auto my-6 p-4 bg-white",
   disabledClass: "opacity-50",
+  primaryClass: 'bg-gray-900 text-white',
+  secondaryClass: 'bg-indigo-500 text-white'
 };
 ```

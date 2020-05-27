@@ -1,5 +1,5 @@
 <template>
-  <div :class="[ baseClass, disabled ? disabledClass : null ]" @click="open = !open">
+  <div :class="[ collapseClasses ]" @click="open = !open">
     <div>
       <slot name="header" >{{ header }}</slot>
     </div>
@@ -26,6 +26,8 @@ import R64CollapseClasses from "../themes/default/R64Collapse";
 
 const {
   baseClass,
+  primaryClass,
+  secondaryClass,
   disabledClass
 } = R64CollapseClasses;
 
@@ -43,6 +45,11 @@ export default {
       default: false,
     },
 
+    secondary: {
+      type: Boolean,
+      default: false,
+    },
+
     header: {
       type: String,
       default: ''
@@ -51,6 +58,16 @@ export default {
     baseClass: {
       type: String,
       default: baseClass,
+    },
+
+    primaryClass: {
+      type: String,
+      default: primaryClass,
+    },
+
+    secondaryClass: {
+      type: String,
+      default: secondaryClass,
     },
 
     disabledClass: {
@@ -70,6 +87,22 @@ export default {
       set(value) {
         this.$emit('input', value)
       },
+    },
+
+    collapseClasses() {
+      const classes = [baseClass]
+
+      if (this.secondary) {
+          classes.push(this.secondaryClass)
+        } else {
+          classes.push(this.primaryClass)
+        }
+
+      if (this.disabled) {
+        classes.push(this.disabledClass)
+      }
+
+      return classes
     },
   },
   methods: {
