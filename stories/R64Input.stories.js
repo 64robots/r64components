@@ -15,6 +15,8 @@ storiesOf('R64Input', module)
         <R64Input class="px-3 w-1/2" label="Email" secondary placeholder="jon@doe.com"/>
         <R64Input class="px-3 w-1/2" label="Email" placeholder="jon@doe.com" help="Any text might help the user to fill the input" />
         <R64Input class="px-3 w-1/2" label="Email" secondary placeholder="jon@doe.com" help="Any text might help the user to fill the input"/>
+        <R64Input class="px-3 w-1/2" placeholder="Without label"/>
+        <R64Input class="px-3 w-1/2" secondary placeholder="Without label"/>
         </div>
         `
   }))

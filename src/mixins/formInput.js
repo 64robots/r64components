@@ -53,6 +53,10 @@ export default {
     helpMessageClass: {
       type: String,
       default: ''
+    },
+    withoutLabelClass: {
+      type: String,
+      default: ''
     }
   },
   data() {
@@ -80,6 +84,7 @@ export default {
     this.classes.error = this.errorClass || this.componentClasses.errorClass
     this.classes.errorMessage = this.errorMessageClass || this.componentClasses.errorMessageClass
     this.classes.helpMessage = this.helpMessageClass || this.componentClasses.helpMessageClass
+    this.classes.withoutLabel = this.withoutLabelClass || this.componentClasses.withoutLabelClass
   },
   computed: {
     formInputClasses() {
