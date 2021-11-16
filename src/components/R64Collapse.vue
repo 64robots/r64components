@@ -34,6 +34,8 @@ const {
 export default {
   name: 'R64Collapse',
 
+  inheritAttrs: false,
+
   props: {
     value: {
       type: Boolean,

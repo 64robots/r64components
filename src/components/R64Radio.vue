@@ -22,6 +22,8 @@ import formInput from '../mixins/formInput'
 export default {
   name: 'R64Radio',
 
+  inheritAttrs: false,
+
   mixins: [formInput],
 
   props: {

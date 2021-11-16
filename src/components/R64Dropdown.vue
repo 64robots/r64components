@@ -37,6 +37,8 @@ const {
 export default {
   name: "R64Dropdown",
 
+  inheritAttrs: false,
+
   props: {
     isOpened: {
       type: Boolean,

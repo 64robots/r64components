@@ -30,6 +30,8 @@ import formInput from '../mixins/formInput'
 export default {
   name: 'R64Input',
 
+  inheritAttrs: false,
+
   mixins: [formInput],
 
   props: {
