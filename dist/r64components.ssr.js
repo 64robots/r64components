@@ -393,7 +393,8 @@ var R64Button$1 = normalizeComponent_1({
   errorClass: 'border border-red-600 placeholder-red-400',
   disabledClass: 'border border-gray-400 bg-gray-100 text-gray-900 cursor-not-allowed opacity-50',
   helpMessageClass: 'mt-1 text-sm text-gray-600',
-  errorMessageClass: 'mt-1 text-sm text-red-500'
+  errorMessageClass: 'mt-1 text-sm text-red-500',
+  withoutLabelClass: 'h-auto mb-1'
 };var R64Select = {
   wrapperClass: 'mb-1 h-24',
   labelClass: 'block mb-1 text-gray-700',
@@ -412,14 +413,21 @@ var R64Button$1 = normalizeComponent_1({
   errorClass: 'border border-red-600 placeholder-red-400',
   disabledClass: 'border border-gray-400 bg-gray-100 text-gray-900 cursor-not-allowed opacity-50',
   helpMessageClass: 'mt-1 text-sm text-gray-600',
-  errorMessageClass: 'mt-1 text-sm text-red-500'
+  errorMessageClass: 'mt-1 text-sm text-red-500',
+  withoutLabelClass: 'h-auto mb-1'
+};var R64Collapse = {
+  baseClass: 'shadow rounded h-auto my-6 p-4',
+  disabledClass: 'opacity-50',
+  primaryClass: 'bg-white text-black',
+  secondaryClass: 'bg-indigo-500 text-white'
 };const defaultTheme = {
   R64Button,
   R64Checkbox,
   R64Radio,
   R64Input,
   R64Select,
-  R64Textarea
+  R64Textarea,
+  R64Collapse
 };var formInput = {
   props: {
     disabled: {
@@ -473,6 +481,10 @@ var R64Button$1 = normalizeComponent_1({
     helpMessageClass: {
       type: String,
       default: ''
+    },
+    withoutLabelClass: {
+      type: String,
+      default: ''
     }
   },
 
@@ -502,6 +514,7 @@ var R64Button$1 = normalizeComponent_1({
     this.classes.error = this.errorClass || this.componentClasses.errorClass;
     this.classes.errorMessage = this.errorMessageClass || this.componentClasses.errorMessageClass;
     this.classes.helpMessage = this.helpMessageClass || this.componentClasses.helpMessageClass;
+    this.classes.withoutLabel = this.withoutLabelClass || this.componentClasses.withoutLabelClass;
   },
 
   computed: {
@@ -543,6 +556,7 @@ var R64Button$1 = normalizeComponent_1({
 };//
 var script$1 = {
   name: 'R64Checkbox',
+  inheritAttrs: false,
   mixins: [formInput],
   props: {
     label: {
@@ -587,7 +601,7 @@ var __vue_staticRenderFns__$1 = [];
 
 const __vue_inject_styles__$1 = function (inject) {
   if (!inject) return;
-  inject("data-v-7bc3e6c2_0", {
+  inject("data-v-c0772d68_0", {
     source: ".r64__button input:checked{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4a1 1 0 00-1.414-1.414L7 8.586 5.707 7.293z'/%3E%3C/svg%3E\");border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:50%}",
     map: undefined,
     media: undefined
@@ -599,7 +613,7 @@ const __vue_inject_styles__$1 = function (inject) {
 const __vue_scope_id__$1 = undefined;
 /* module identifier */
 
-const __vue_module_identifier__$1 = "data-v-7bc3e6c2";
+const __vue_module_identifier__$1 = "data-v-c0772d68";
 /* functional template */
 
 const __vue_is_functional_template__$1 = false;
@@ -609,6 +623,7 @@ var R64Checkbox$1 = normalizeComponent_1({
 }, __vue_inject_styles__$1, __vue_script__$1, __vue_scope_id__$1, __vue_is_functional_template__$1, __vue_module_identifier__$1, undefined, server);//
 var script$2 = {
   name: 'R64Input',
+  inheritAttrs: false,
   mixins: [formInput],
   props: {
     id: {
@@ -762,7 +777,7 @@ var __vue_render__$2 = function () {
 
   return _c('div', {
     staticClass: "r64__input",
-    class: [_vm.classes.wrapper]
+    class: [_vm.label ? _vm.classes.wrapper : _vm.classes.withoutLabel]
   }, [_vm._ssrNode("<label" + _vm._ssrAttr("for", _vm.inputId) + _vm._ssrClass(null, _vm.classes.label) + ">" + _vm._ssrEscape("\n    " + _vm._s(_vm.label) + "\n  ") + "</label> " + (_vm.internalType === 'checkbox' ? "<input" + _vm._ssrAttr("id", _vm.inputId) + _vm._ssrAttr("placeholder", _vm.placeholder) + _vm._ssrAttr("disabled", _vm.disabled) + " type=\"checkbox\"" + _vm._ssrAttr("checked", Array.isArray(_vm.localValue) ? _vm._i(_vm.localValue, null) > -1 : _vm.localValue) + _vm._ssrAttrs(_vm.$attrs) + _vm._ssrClass(null, _vm.formInputClasses) + ">" : _vm.internalType === 'radio' ? "<input" + _vm._ssrAttr("id", _vm.inputId) + _vm._ssrAttr("placeholder", _vm.placeholder) + _vm._ssrAttr("disabled", _vm.disabled) + " type=\"radio\"" + _vm._ssrAttr("checked", _vm._q(_vm.localValue, null)) + _vm._ssrAttrs(_vm.$attrs) + _vm._ssrClass(null, _vm.formInputClasses) + ">" : "<input" + _vm._ssrAttr("id", _vm.inputId) + _vm._ssrAttr("placeholder", _vm.placeholder) + _vm._ssrAttr("disabled", _vm.disabled) + _vm._ssrAttr("type", _vm.internalType) + _vm._ssrAttr("value", _vm.localValue) + _vm._ssrAttrs(_vm.$attrs) + _vm._ssrClass(null, _vm.formInputClasses) + ">") + " " + (_vm.hasFeedback ? "<p" + _vm._ssrClass(null, _vm.feedbackClass) + ">" + _vm._ssrEscape("\n    " + _vm._s(_vm.feedback) + "\n  ") + "</p>" : "<!---->"))]);
 };
 
@@ -775,7 +790,7 @@ const __vue_inject_styles__$2 = undefined;
 const __vue_scope_id__$2 = undefined;
 /* module identifier */
 
-const __vue_module_identifier__$2 = "data-v-94414df2";
+const __vue_module_identifier__$2 = "data-v-5946f0b8";
 /* functional template */
 
 const __vue_is_functional_template__$2 = false;
@@ -789,6 +804,7 @@ var R64Input$1 = normalizeComponent_1({
 }, __vue_inject_styles__$2, __vue_script__$2, __vue_scope_id__$2, __vue_is_functional_template__$2, __vue_module_identifier__$2, undefined, undefined);//
 var script$3 = {
   name: 'R64Textarea',
+  inheritAttrs: false,
   mixins: [formInput],
   props: {
     id: {
@@ -932,7 +948,7 @@ var __vue_render__$3 = function () {
 
   return _c('div', {
     staticClass: "r64__textarea",
-    class: [_vm.classes.wrapper]
+    class: [_vm.label ? _vm.classes.wrapper : _vm.classes.withoutLabel]
   }, [_vm._ssrNode("<label" + _vm._ssrAttr("for", _vm.inputId) + _vm._ssrClass(null, _vm.classes.label) + ">" + _vm._ssrEscape("\n    " + _vm._s(_vm.label) + "\n  ") + "</label> <textarea" + _vm._ssrAttr("id", _vm.textareaId) + _vm._ssrAttr("placeholder", _vm.placeholder) + _vm._ssrAttr("disabled", _vm.disabled) + _vm._ssrAttrs(_vm.$attrs) + _vm._ssrClass(null, _vm.formInputClasses) + ">" + _vm._ssrEscape(_vm._s(_vm.localValue)) + "</textarea> " + (_vm.hasFeedback ? "<p" + _vm._ssrClass(null, _vm.feedbackClass) + ">" + _vm._ssrEscape("\n    " + _vm._s(_vm.feedback) + "\n  ") + "</p>" : "<!---->"))]);
 };
 
@@ -945,7 +961,7 @@ const __vue_inject_styles__$3 = undefined;
 const __vue_scope_id__$3 = undefined;
 /* module identifier */
 
-const __vue_module_identifier__$3 = "data-v-699bd6bf";
+const __vue_module_identifier__$3 = "data-v-c9768eec";
 /* functional template */
 
 const __vue_is_functional_template__$3 = false;
@@ -959,6 +975,7 @@ var R64Textarea$1 = normalizeComponent_1({
 }, __vue_inject_styles__$3, __vue_script__$3, __vue_scope_id__$3, __vue_is_functional_template__$3, __vue_module_identifier__$3, undefined, undefined);//
 var script$4 = {
   name: 'R64Radio',
+  inheritAttrs: false,
   mixins: [formInput],
   props: {
     label: {
@@ -1010,7 +1027,7 @@ var __vue_staticRenderFns__$4 = [];
 
 const __vue_inject_styles__$4 = function (inject) {
   if (!inject) return;
-  inject("data-v-6388508c_0", {
+  inject("data-v-0baf7744_0", {
     source: ".r64__radio input:checked{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='3'/%3E%3C/svg%3E\");border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:50%}",
     map: undefined,
     media: undefined
@@ -1022,7 +1039,7 @@ const __vue_inject_styles__$4 = function (inject) {
 const __vue_scope_id__$4 = undefined;
 /* module identifier */
 
-const __vue_module_identifier__$4 = "data-v-6388508c";
+const __vue_module_identifier__$4 = "data-v-0baf7744";
 /* functional template */
 
 const __vue_is_functional_template__$4 = false;
@@ -1032,6 +1049,7 @@ var R64Radio$1 = normalizeComponent_1({
 }, __vue_inject_styles__$4, __vue_script__$4, __vue_scope_id__$4, __vue_is_functional_template__$4, __vue_module_identifier__$4, undefined, server);//
 var script$5 = {
   name: 'R64Select',
+  inheritAttrs: false,
   mixins: [formInput],
   props: {
     label: {
@@ -1154,7 +1172,7 @@ var __vue_staticRenderFns__$5 = [];
 
 const __vue_inject_styles__$5 = function (inject) {
   if (!inject) return;
-  inject("data-v-6f97d1b5_0", {
+  inject("data-v-5bee0e82_0", {
     source: ".r64__select select{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M7 7l3-3 3 3m0 6l-3 3-3-3' stroke='%239fa6b2' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\");background-repeat:no-repeat;background-position:right 1rem center;background-size:1.5em 1.5em}",
     map: undefined,
     media: undefined
@@ -1166,7 +1184,7 @@ const __vue_inject_styles__$5 = function (inject) {
 const __vue_scope_id__$5 = undefined;
 /* module identifier */
 
-const __vue_module_identifier__$5 = "data-v-6f97d1b5";
+const __vue_module_identifier__$5 = "data-v-5bee0e82";
 /* functional template */
 
 const __vue_is_functional_template__$5 = false;
