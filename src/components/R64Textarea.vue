@@ -29,6 +29,8 @@ import formInput from '../mixins/formInput'
 export default {
   name: 'R64Textarea',
 
+  inheritAttrs: false,
+
   mixins: [formInput],
 
   props: {
