@@ -738,7 +738,7 @@ var script$2 = {
     },
 
     onInput() {
-      this.hasInput = this.localValue.length;
+      this.hasInput = this.localValue ? this.localValue.length : false;
     },
 
     onKeyUp(event) {
@@ -790,7 +790,7 @@ const __vue_inject_styles__$2 = undefined;
 const __vue_scope_id__$2 = undefined;
 /* module identifier */
 
-const __vue_module_identifier__$2 = "data-v-5946f0b8";
+const __vue_module_identifier__$2 = "data-v-a89ec968";
 /* functional template */
 
 const __vue_is_functional_template__$2 = false;

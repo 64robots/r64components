@@ -2,7 +2,7 @@
   "name": "@64robots/r64components",
   "author": "64Robots",
   "license": "MIT",
-  "version": "0.1.29",
+  "version": "0.1.30",
   "description": "Set of customizable components made with Tailwindcss",
   "main": "dist/r64components.ssr.js",
   "browser": "dist/r64components.esm.js",

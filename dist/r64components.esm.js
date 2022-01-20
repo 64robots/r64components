@@ -788,7 +788,7 @@ var script$2 = {
     },
 
     onInput() {
-      this.hasInput = this.localValue.length;
+      this.hasInput = this.localValue ? this.localValue.length : false;
     },
 
     onKeyUp(event) {
