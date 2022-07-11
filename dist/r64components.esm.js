@@ -585,6 +585,10 @@ var script$1 = {
   inheritAttrs: false,
   mixins: [formInput],
   props: {
+    id: {
+      type: String,
+      default: null
+    },
     label: {
       type: String,
       required: true
@@ -647,7 +651,7 @@ var __vue_staticRenderFns__$1 = [];
 
 const __vue_inject_styles__$1 = function (inject) {
   if (!inject) return;
-  inject("data-v-c0772d68_0", {
+  inject("data-v-f42f1390_0", {
     source: ".r64__button input:checked{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4a1 1 0 00-1.414-1.414L7 8.586 5.707 7.293z'/%3E%3C/svg%3E\");border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:50%}",
     map: undefined,
     media: undefined
@@ -1117,7 +1121,7 @@ var __vue_render__$3 = function () {
   }, [_c('label', {
     class: _vm.classes.label,
     attrs: {
-      "for": _vm.inputId
+      "for": _vm.textareaId
     }
   }, [_vm._v("\n    " + _vm._s(_vm.label) + "\n  ")]), _vm._v(" "), _c('textarea', _vm._b({
     directives: [{
@@ -1182,6 +1186,10 @@ var script$4 = {
   inheritAttrs: false,
   mixins: [formInput],
   props: {
+    id: {
+      type: String,
+      default: null
+    },
     label: {
       type: String,
       required: true
@@ -1206,6 +1214,14 @@ var script$4 = {
   computed: {
     checked() {
       return this.value === this.radioValue;
+    },
+
+    radioId() {
+      if (this.id) {
+        return this.id;
+      }
+
+      return this._uid;
     }
 
   }
@@ -1226,10 +1242,14 @@ var __vue_render__$4 = function () {
     staticClass: "r64__radio",
     class: _vm.classes.wrapper
   }, [_c('label', {
-    staticClass: "inline-flex items-center"
+    staticClass: "inline-flex items-center",
+    attrs: {
+      "for": _vm.radioId
+    }
   }, [_c('input', _vm._b({
     class: _vm.formInputClasses,
     attrs: {
+      "id": "radioId",
       "type": "radio",
       "name": _vm.name,
       "disabled": _vm.disabled
@@ -1255,7 +1275,7 @@ var __vue_staticRenderFns__$4 = [];
 
 const __vue_inject_styles__$4 = function (inject) {
   if (!inject) return;
-  inject("data-v-0baf7744_0", {
+  inject("data-v-d3962244_0", {
     source: ".r64__radio input:checked{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='3'/%3E%3C/svg%3E\");border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:50%}",
     map: undefined,
     media: undefined
@@ -1284,6 +1304,10 @@ var script$5 = {
   inheritAttrs: false,
   mixins: [formInput],
   props: {
+    id: {
+      type: String,
+      default: null
+    },
     label: {
       type: String,
       default: null
@@ -1317,6 +1341,16 @@ var script$5 = {
     };
   },
 
+  computed: {
+    selectId() {
+      if (this.id) {
+        return this.id;
+      }
+
+      return this._uid;
+    }
+
+  },
   watch: {
     value(newVal) {
       this.localValue = newVal;
@@ -1362,7 +1396,10 @@ var __vue_render__$5 = function () {
     staticClass: "r64__select",
     class: [_vm.classes.wrapper]
   }, [_vm.label ? _c('label', {
-    class: _vm.classes.label
+    class: _vm.classes.label,
+    attrs: {
+      "for": _vm.selectId
+    }
   }, [_vm._v("\n    " + _vm._s(_vm.label) + "\n  ")]) : _vm._e(), _vm._v(" "), _c('select', _vm._b({
     directives: [{
       name: "model",
@@ -1373,6 +1410,7 @@ var __vue_render__$5 = function () {
     ref: "select",
     class: _vm.formInputClasses,
     attrs: {
+      "id": _vm.selectId,
       "disabled": _vm.disabled,
       "name": _vm.name,
       "placeholder": _vm.placeholder
@@ -1410,7 +1448,7 @@ var __vue_staticRenderFns__$5 = [];
 
 const __vue_inject_styles__$5 = function (inject) {
   if (!inject) return;
-  inject("data-v-5bee0e82_0", {
+  inject("data-v-feb97d56_0", {
     source: ".r64__select select{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M7 7l3-3 3 3m0 6l-3 3-3-3' stroke='%239fa6b2' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\");background-repeat:no-repeat;background-position:right 1rem center;background-size:1.5em 1.5em}",
     map: undefined,
     media: undefined

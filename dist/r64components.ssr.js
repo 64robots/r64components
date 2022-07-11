@@ -559,6 +559,10 @@ var script$1 = {
   inheritAttrs: false,
   mixins: [formInput],
   props: {
+    id: {
+      type: String,
+      default: null
+    },
     label: {
       type: String,
       required: true
@@ -601,7 +605,7 @@ var __vue_staticRenderFns__$1 = [];
 
 const __vue_inject_styles__$1 = function (inject) {
   if (!inject) return;
-  inject("data-v-c0772d68_0", {
+  inject("data-v-f42f1390_0", {
     source: ".r64__button input:checked{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4a1 1 0 00-1.414-1.414L7 8.586 5.707 7.293z'/%3E%3C/svg%3E\");border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:50%}",
     map: undefined,
     media: undefined
@@ -613,7 +617,7 @@ const __vue_inject_styles__$1 = function (inject) {
 const __vue_scope_id__$1 = undefined;
 /* module identifier */
 
-const __vue_module_identifier__$1 = "data-v-c0772d68";
+const __vue_module_identifier__$1 = "data-v-f42f1390";
 /* functional template */
 
 const __vue_is_functional_template__$1 = false;
@@ -949,7 +953,7 @@ var __vue_render__$3 = function () {
   return _c('div', {
     staticClass: "r64__textarea",
     class: [_vm.label ? _vm.classes.wrapper : _vm.classes.withoutLabel]
-  }, [_vm._ssrNode("<label" + _vm._ssrAttr("for", _vm.inputId) + _vm._ssrClass(null, _vm.classes.label) + ">" + _vm._ssrEscape("\n    " + _vm._s(_vm.label) + "\n  ") + "</label> <textarea" + _vm._ssrAttr("id", _vm.textareaId) + _vm._ssrAttr("placeholder", _vm.placeholder) + _vm._ssrAttr("disabled", _vm.disabled) + _vm._ssrAttrs(_vm.$attrs) + _vm._ssrClass(null, _vm.formInputClasses) + ">" + _vm._ssrEscape(_vm._s(_vm.localValue)) + "</textarea> " + (_vm.hasFeedback ? "<p" + _vm._ssrClass(null, _vm.feedbackClass) + ">" + _vm._ssrEscape("\n    " + _vm._s(_vm.feedback) + "\n  ") + "</p>" : "<!---->"))]);
+  }, [_vm._ssrNode("<label" + _vm._ssrAttr("for", _vm.textareaId) + _vm._ssrClass(null, _vm.classes.label) + ">" + _vm._ssrEscape("\n    " + _vm._s(_vm.label) + "\n  ") + "</label> <textarea" + _vm._ssrAttr("id", _vm.textareaId) + _vm._ssrAttr("placeholder", _vm.placeholder) + _vm._ssrAttr("disabled", _vm.disabled) + _vm._ssrAttrs(_vm.$attrs) + _vm._ssrClass(null, _vm.formInputClasses) + ">" + _vm._ssrEscape(_vm._s(_vm.localValue)) + "</textarea> " + (_vm.hasFeedback ? "<p" + _vm._ssrClass(null, _vm.feedbackClass) + ">" + _vm._ssrEscape("\n    " + _vm._s(_vm.feedback) + "\n  ") + "</p>" : "<!---->"))]);
 };
 
 var __vue_staticRenderFns__$3 = [];
@@ -961,7 +965,7 @@ const __vue_inject_styles__$3 = undefined;
 const __vue_scope_id__$3 = undefined;
 /* module identifier */
 
-const __vue_module_identifier__$3 = "data-v-c9768eec";
+const __vue_module_identifier__$3 = "data-v-53d68f88";
 /* functional template */
 
 const __vue_is_functional_template__$3 = false;
@@ -978,6 +982,10 @@ var script$4 = {
   inheritAttrs: false,
   mixins: [formInput],
   props: {
+    id: {
+      type: String,
+      default: null
+    },
     label: {
       type: String,
       required: true
@@ -1002,6 +1010,14 @@ var script$4 = {
   computed: {
     checked() {
       return this.value === this.radioValue;
+    },
+
+    radioId() {
+      if (this.id) {
+        return this.id;
+      }
+
+      return this._uid;
     }
 
   }
@@ -1019,7 +1035,7 @@ var __vue_render__$4 = function () {
   return _c('div', {
     staticClass: "r64__radio",
     class: _vm.classes.wrapper
-  }, [_vm._ssrNode("<label class=\"inline-flex items-center\"><input type=\"radio\"" + _vm._ssrAttr("name", _vm.name) + _vm._ssrAttr("disabled", _vm.disabled) + _vm._ssrAttr("value", _vm.value) + _vm._ssrAttr("checked", _vm.checked) + _vm._ssrAttrs(_vm.$attrs) + _vm._ssrClass(null, _vm.formInputClasses) + "> <span" + _vm._ssrClass(null, _vm.classes.label) + ">" + _vm._ssrEscape(_vm._s(_vm.label)) + "</span></label> " + (_vm.hasError ? "<p" + _vm._ssrClass(null, _vm.classes.errorMessage) + ">" + _vm._ssrEscape(_vm._s(_vm.errorMessage)) + "</p>" : "<!---->"))]);
+  }, [_vm._ssrNode("<label" + _vm._ssrAttr("for", _vm.radioId) + " class=\"inline-flex items-center\"><input id=\"radioId\" type=\"radio\"" + _vm._ssrAttr("name", _vm.name) + _vm._ssrAttr("disabled", _vm.disabled) + _vm._ssrAttr("value", _vm.value) + _vm._ssrAttr("checked", _vm.checked) + _vm._ssrAttrs(_vm.$attrs) + _vm._ssrClass(null, _vm.formInputClasses) + "> <span" + _vm._ssrClass(null, _vm.classes.label) + ">" + _vm._ssrEscape(_vm._s(_vm.label)) + "</span></label> " + (_vm.hasError ? "<p" + _vm._ssrClass(null, _vm.classes.errorMessage) + ">" + _vm._ssrEscape(_vm._s(_vm.errorMessage)) + "</p>" : "<!---->"))]);
 };
 
 var __vue_staticRenderFns__$4 = [];
@@ -1027,7 +1043,7 @@ var __vue_staticRenderFns__$4 = [];
 
 const __vue_inject_styles__$4 = function (inject) {
   if (!inject) return;
-  inject("data-v-0baf7744_0", {
+  inject("data-v-d3962244_0", {
     source: ".r64__radio input:checked{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='3'/%3E%3C/svg%3E\");border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:50%}",
     map: undefined,
     media: undefined
@@ -1039,7 +1055,7 @@ const __vue_inject_styles__$4 = function (inject) {
 const __vue_scope_id__$4 = undefined;
 /* module identifier */
 
-const __vue_module_identifier__$4 = "data-v-0baf7744";
+const __vue_module_identifier__$4 = "data-v-d3962244";
 /* functional template */
 
 const __vue_is_functional_template__$4 = false;
@@ -1052,6 +1068,10 @@ var script$5 = {
   inheritAttrs: false,
   mixins: [formInput],
   props: {
+    id: {
+      type: String,
+      default: null
+    },
     label: {
       type: String,
       default: null
@@ -1085,6 +1105,16 @@ var script$5 = {
     };
   },
 
+  computed: {
+    selectId() {
+      if (this.id) {
+        return this.id;
+      }
+
+      return this._uid;
+    }
+
+  },
   watch: {
     value(newVal) {
       this.localValue = newVal;
@@ -1127,7 +1157,7 @@ var __vue_render__$5 = function () {
   return _c('div', {
     staticClass: "r64__select",
     class: [_vm.classes.wrapper]
-  }, [_vm._ssrNode((_vm.label ? "<label" + _vm._ssrClass(null, _vm.classes.label) + ">" + _vm._ssrEscape("\n    " + _vm._s(_vm.label) + "\n  ") + "</label>" : "<!---->") + " "), _c('select', _vm._b({
+  }, [_vm._ssrNode((_vm.label ? "<label" + _vm._ssrAttr("for", _vm.selectId) + _vm._ssrClass(null, _vm.classes.label) + ">" + _vm._ssrEscape("\n    " + _vm._s(_vm.label) + "\n  ") + "</label>" : "<!---->") + " "), _c('select', _vm._b({
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -1137,6 +1167,7 @@ var __vue_render__$5 = function () {
     ref: "select",
     class: _vm.formInputClasses,
     attrs: {
+      "id": _vm.selectId,
       "disabled": _vm.disabled,
       "name": _vm.name,
       "placeholder": _vm.placeholder
@@ -1172,7 +1203,7 @@ var __vue_staticRenderFns__$5 = [];
 
 const __vue_inject_styles__$5 = function (inject) {
   if (!inject) return;
-  inject("data-v-5bee0e82_0", {
+  inject("data-v-feb97d56_0", {
     source: ".r64__select select{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M7 7l3-3 3 3m0 6l-3 3-3-3' stroke='%239fa6b2' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\");background-repeat:no-repeat;background-position:right 1rem center;background-size:1.5em 1.5em}",
     map: undefined,
     media: undefined
@@ -1184,7 +1215,7 @@ const __vue_inject_styles__$5 = function (inject) {
 const __vue_scope_id__$5 = undefined;
 /* module identifier */
 
-const __vue_module_identifier__$5 = "data-v-5bee0e82";
+const __vue_module_identifier__$5 = "data-v-feb97d56";
 /* functional template */
 
 const __vue_is_functional_template__$5 = false;
