@@ -17,7 +17,7 @@
       @keydown="isTyping"
       @keyup="onKeyUp"
     />
-    <p v-if="hasFeedback" :class="feedbackClass">
+    <p v-if="hasFeedback" aria-live="assertive" :class="feedbackClass">
       {{ feedback }}
     </p>
   </div>
