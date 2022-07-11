@@ -13,7 +13,7 @@
         {{ label }}
       </span>
     </label>
-    <p v-if="hasError" :class="classes.error">{{ errorMessage }}</p>
+    <p v-if="hasError" aria-live="assertive" :class="classes.error">{{ errorMessage }}</p>
   </div>
 </template>
 <script>

@@ -26,7 +26,7 @@
         {{ option.label }}
       </option>
     </select>
-    <p v-if="hasError" :class="classes.errorMessage">{{ errorMessage }}</p>
+    <p v-if="hasError" aria-live="assertive" :class="classes.errorMessage">{{ errorMessage }}</p>
   </div>
 </template>
 
