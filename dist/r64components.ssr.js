@@ -597,7 +597,7 @@ var __vue_render__$1 = function () {
   return _c('div', {
     staticClass: "r64__button",
     class: _vm.classes.wrapper
-  }, [_vm._ssrNode("<label class=\"inline-flex items-center\"><input type=\"checkbox\"" + _vm._ssrAttr("disabled", _vm.disabled) + _vm._ssrAttr("checked", _vm.value) + _vm._ssrAttrs(_vm.$attrs) + _vm._ssrClass(null, _vm.formInputClasses) + "> <span" + _vm._ssrClass(null, [_vm.classes.label]) + ">" + _vm._ssrEscape("\n      " + _vm._s(_vm.label) + "\n    ") + "</span></label> " + (_vm.hasError ? "<p" + _vm._ssrClass(null, _vm.classes.error) + ">" + _vm._ssrEscape(_vm._s(_vm.errorMessage)) + "</p>" : "<!---->"))]);
+  }, [_vm._ssrNode("<label class=\"inline-flex items-center\"><input type=\"checkbox\"" + _vm._ssrAttr("disabled", _vm.disabled) + _vm._ssrAttr("checked", _vm.value) + _vm._ssrAttrs(_vm.$attrs) + _vm._ssrClass(null, _vm.formInputClasses) + "> <span" + _vm._ssrClass(null, [_vm.classes.label]) + ">" + _vm._ssrEscape("\n      " + _vm._s(_vm.label) + "\n    ") + "</span></label> " + (_vm.hasError ? "<p aria-live=\"assertive\"" + _vm._ssrClass(null, _vm.classes.error) + ">" + _vm._ssrEscape(_vm._s(_vm.errorMessage)) + "</p>" : "<!---->"))]);
 };
 
 var __vue_staticRenderFns__$1 = [];
@@ -605,7 +605,7 @@ var __vue_staticRenderFns__$1 = [];
 
 const __vue_inject_styles__$1 = function (inject) {
   if (!inject) return;
-  inject("data-v-f42f1390_0", {
+  inject("data-v-3023009a_0", {
     source: ".r64__button input:checked{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4a1 1 0 00-1.414-1.414L7 8.586 5.707 7.293z'/%3E%3C/svg%3E\");border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:50%}",
     map: undefined,
     media: undefined
@@ -617,7 +617,7 @@ const __vue_inject_styles__$1 = function (inject) {
 const __vue_scope_id__$1 = undefined;
 /* module identifier */
 
-const __vue_module_identifier__$1 = "data-v-f42f1390";
+const __vue_module_identifier__$1 = "data-v-3023009a";
 /* functional template */
 
 const __vue_is_functional_template__$1 = false;
@@ -782,7 +782,7 @@ var __vue_render__$2 = function () {
   return _c('div', {
     staticClass: "r64__input",
     class: [_vm.label ? _vm.classes.wrapper : _vm.classes.withoutLabel]
-  }, [_vm._ssrNode("<label" + _vm._ssrAttr("for", _vm.inputId) + _vm._ssrClass(null, _vm.classes.label) + ">" + _vm._ssrEscape("\n    " + _vm._s(_vm.label) + "\n  ") + "</label> " + (_vm.internalType === 'checkbox' ? "<input" + _vm._ssrAttr("id", _vm.inputId) + _vm._ssrAttr("placeholder", _vm.placeholder) + _vm._ssrAttr("disabled", _vm.disabled) + " type=\"checkbox\"" + _vm._ssrAttr("checked", Array.isArray(_vm.localValue) ? _vm._i(_vm.localValue, null) > -1 : _vm.localValue) + _vm._ssrAttrs(_vm.$attrs) + _vm._ssrClass(null, _vm.formInputClasses) + ">" : _vm.internalType === 'radio' ? "<input" + _vm._ssrAttr("id", _vm.inputId) + _vm._ssrAttr("placeholder", _vm.placeholder) + _vm._ssrAttr("disabled", _vm.disabled) + " type=\"radio\"" + _vm._ssrAttr("checked", _vm._q(_vm.localValue, null)) + _vm._ssrAttrs(_vm.$attrs) + _vm._ssrClass(null, _vm.formInputClasses) + ">" : "<input" + _vm._ssrAttr("id", _vm.inputId) + _vm._ssrAttr("placeholder", _vm.placeholder) + _vm._ssrAttr("disabled", _vm.disabled) + _vm._ssrAttr("type", _vm.internalType) + _vm._ssrAttr("value", _vm.localValue) + _vm._ssrAttrs(_vm.$attrs) + _vm._ssrClass(null, _vm.formInputClasses) + ">") + " " + (_vm.hasFeedback ? "<p" + _vm._ssrClass(null, _vm.feedbackClass) + ">" + _vm._ssrEscape("\n    " + _vm._s(_vm.feedback) + "\n  ") + "</p>" : "<!---->"))]);
+  }, [_vm._ssrNode("<label" + _vm._ssrAttr("for", _vm.inputId) + _vm._ssrClass(null, _vm.classes.label) + ">" + _vm._ssrEscape("\n    " + _vm._s(_vm.label) + "\n  ") + "</label> " + (_vm.internalType === 'checkbox' ? "<input" + _vm._ssrAttr("id", _vm.inputId) + _vm._ssrAttr("placeholder", _vm.placeholder) + _vm._ssrAttr("disabled", _vm.disabled) + " type=\"checkbox\"" + _vm._ssrAttr("checked", Array.isArray(_vm.localValue) ? _vm._i(_vm.localValue, null) > -1 : _vm.localValue) + _vm._ssrAttrs(_vm.$attrs) + _vm._ssrClass(null, _vm.formInputClasses) + ">" : _vm.internalType === 'radio' ? "<input" + _vm._ssrAttr("id", _vm.inputId) + _vm._ssrAttr("placeholder", _vm.placeholder) + _vm._ssrAttr("disabled", _vm.disabled) + " type=\"radio\"" + _vm._ssrAttr("checked", _vm._q(_vm.localValue, null)) + _vm._ssrAttrs(_vm.$attrs) + _vm._ssrClass(null, _vm.formInputClasses) + ">" : "<input" + _vm._ssrAttr("id", _vm.inputId) + _vm._ssrAttr("placeholder", _vm.placeholder) + _vm._ssrAttr("disabled", _vm.disabled) + _vm._ssrAttr("type", _vm.internalType) + _vm._ssrAttr("value", _vm.localValue) + _vm._ssrAttrs(_vm.$attrs) + _vm._ssrClass(null, _vm.formInputClasses) + ">") + " " + (_vm.hasFeedback ? "<p aria-live=\"assertive\"" + _vm._ssrClass(null, _vm.feedbackClass) + ">" + _vm._ssrEscape("\n    " + _vm._s(_vm.feedback) + "\n  ") + "</p>" : "<!---->"))]);
 };
 
 var __vue_staticRenderFns__$2 = [];
@@ -794,7 +794,7 @@ const __vue_inject_styles__$2 = undefined;
 const __vue_scope_id__$2 = undefined;
 /* module identifier */
 
-const __vue_module_identifier__$2 = "data-v-a89ec968";
+const __vue_module_identifier__$2 = "data-v-a9d0d562";
 /* functional template */
 
 const __vue_is_functional_template__$2 = false;
@@ -953,7 +953,7 @@ var __vue_render__$3 = function () {
   return _c('div', {
     staticClass: "r64__textarea",
     class: [_vm.label ? _vm.classes.wrapper : _vm.classes.withoutLabel]
-  }, [_vm._ssrNode("<label" + _vm._ssrAttr("for", _vm.textareaId) + _vm._ssrClass(null, _vm.classes.label) + ">" + _vm._ssrEscape("\n    " + _vm._s(_vm.label) + "\n  ") + "</label> <textarea" + _vm._ssrAttr("id", _vm.textareaId) + _vm._ssrAttr("placeholder", _vm.placeholder) + _vm._ssrAttr("disabled", _vm.disabled) + _vm._ssrAttrs(_vm.$attrs) + _vm._ssrClass(null, _vm.formInputClasses) + ">" + _vm._ssrEscape(_vm._s(_vm.localValue)) + "</textarea> " + (_vm.hasFeedback ? "<p" + _vm._ssrClass(null, _vm.feedbackClass) + ">" + _vm._ssrEscape("\n    " + _vm._s(_vm.feedback) + "\n  ") + "</p>" : "<!---->"))]);
+  }, [_vm._ssrNode("<label" + _vm._ssrAttr("for", _vm.textareaId) + _vm._ssrClass(null, _vm.classes.label) + ">" + _vm._ssrEscape("\n    " + _vm._s(_vm.label) + "\n  ") + "</label> <textarea" + _vm._ssrAttr("id", _vm.textareaId) + _vm._ssrAttr("placeholder", _vm.placeholder) + _vm._ssrAttr("disabled", _vm.disabled) + _vm._ssrAttrs(_vm.$attrs) + _vm._ssrClass(null, _vm.formInputClasses) + ">" + _vm._ssrEscape(_vm._s(_vm.localValue)) + "</textarea> " + (_vm.hasFeedback ? "<p aria-live=\"assertive\"" + _vm._ssrClass(null, _vm.feedbackClass) + ">" + _vm._ssrEscape("\n    " + _vm._s(_vm.feedback) + "\n  ") + "</p>" : "<!---->"))]);
 };
 
 var __vue_staticRenderFns__$3 = [];
@@ -965,7 +965,7 @@ const __vue_inject_styles__$3 = undefined;
 const __vue_scope_id__$3 = undefined;
 /* module identifier */
 
-const __vue_module_identifier__$3 = "data-v-53d68f88";
+const __vue_module_identifier__$3 = "data-v-525cda7a";
 /* functional template */
 
 const __vue_is_functional_template__$3 = false;
@@ -1035,7 +1035,7 @@ var __vue_render__$4 = function () {
   return _c('div', {
     staticClass: "r64__radio",
     class: _vm.classes.wrapper
-  }, [_vm._ssrNode("<label" + _vm._ssrAttr("for", _vm.radioId) + " class=\"inline-flex items-center\"><input id=\"radioId\" type=\"radio\"" + _vm._ssrAttr("name", _vm.name) + _vm._ssrAttr("disabled", _vm.disabled) + _vm._ssrAttr("value", _vm.value) + _vm._ssrAttr("checked", _vm.checked) + _vm._ssrAttrs(_vm.$attrs) + _vm._ssrClass(null, _vm.formInputClasses) + "> <span" + _vm._ssrClass(null, _vm.classes.label) + ">" + _vm._ssrEscape(_vm._s(_vm.label)) + "</span></label> " + (_vm.hasError ? "<p" + _vm._ssrClass(null, _vm.classes.errorMessage) + ">" + _vm._ssrEscape(_vm._s(_vm.errorMessage)) + "</p>" : "<!---->"))]);
+  }, [_vm._ssrNode("<label" + _vm._ssrAttr("for", _vm.radioId) + " class=\"inline-flex items-center\"><input id=\"radioId\" type=\"radio\"" + _vm._ssrAttr("name", _vm.name) + _vm._ssrAttr("disabled", _vm.disabled) + _vm._ssrAttr("value", _vm.value) + _vm._ssrAttr("checked", _vm.checked) + _vm._ssrAttrs(_vm.$attrs) + _vm._ssrClass(null, _vm.formInputClasses) + "> <span" + _vm._ssrClass(null, _vm.classes.label) + ">" + _vm._ssrEscape(_vm._s(_vm.label)) + "</span></label> " + (_vm.hasError ? "<p aria-live=\"assertive\"" + _vm._ssrClass(null, _vm.classes.errorMessage) + ">" + _vm._ssrEscape(_vm._s(_vm.errorMessage)) + "</p>" : "<!---->"))]);
 };
 
 var __vue_staticRenderFns__$4 = [];
@@ -1043,7 +1043,7 @@ var __vue_staticRenderFns__$4 = [];
 
 const __vue_inject_styles__$4 = function (inject) {
   if (!inject) return;
-  inject("data-v-d3962244_0", {
+  inject("data-v-381b2259_0", {
     source: ".r64__radio input:checked{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='3'/%3E%3C/svg%3E\");border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:50%}",
     map: undefined,
     media: undefined
@@ -1055,7 +1055,7 @@ const __vue_inject_styles__$4 = function (inject) {
 const __vue_scope_id__$4 = undefined;
 /* module identifier */
 
-const __vue_module_identifier__$4 = "data-v-d3962244";
+const __vue_module_identifier__$4 = "data-v-381b2259";
 /* functional template */
 
 const __vue_is_functional_template__$4 = false;
@@ -1195,7 +1195,7 @@ var __vue_render__$5 = function () {
         "value": option.value
       }
     }, [_vm._v("\n      " + _vm._s(option.label) + "\n    ")]);
-  })], 2), _vm._ssrNode(" " + (_vm.hasError ? "<p" + _vm._ssrClass(null, _vm.classes.errorMessage) + ">" + _vm._ssrEscape(_vm._s(_vm.errorMessage)) + "</p>" : "<!---->"))], 2);
+  })], 2), _vm._ssrNode(" " + (_vm.hasError ? "<p aria-live=\"assertive\"" + _vm._ssrClass(null, _vm.classes.errorMessage) + ">" + _vm._ssrEscape(_vm._s(_vm.errorMessage)) + "</p>" : "<!---->"))], 2);
 };
 
 var __vue_staticRenderFns__$5 = [];
@@ -1203,7 +1203,7 @@ var __vue_staticRenderFns__$5 = [];
 
 const __vue_inject_styles__$5 = function (inject) {
   if (!inject) return;
-  inject("data-v-feb97d56_0", {
+  inject("data-v-10a721d0_0", {
     source: ".r64__select select{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M7 7l3-3 3 3m0 6l-3 3-3-3' stroke='%239fa6b2' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\");background-repeat:no-repeat;background-position:right 1rem center;background-size:1.5em 1.5em}",
     map: undefined,
     media: undefined
@@ -1215,7 +1215,7 @@ const __vue_inject_styles__$5 = function (inject) {
 const __vue_scope_id__$5 = undefined;
 /* module identifier */
 
-const __vue_module_identifier__$5 = "data-v-feb97d56";
+const __vue_module_identifier__$5 = "data-v-10a721d0";
 /* functional template */
 
 const __vue_is_functional_template__$5 = false;

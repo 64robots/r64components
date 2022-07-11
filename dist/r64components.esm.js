@@ -642,7 +642,10 @@ var __vue_render__$1 = function () {
   }, 'input', _vm.$attrs, false)), _vm._v(" "), _c('span', {
     class: [_vm.classes.label]
   }, [_vm._v("\n      " + _vm._s(_vm.label) + "\n    ")])]), _vm._v(" "), _vm.hasError ? _c('p', {
-    class: _vm.classes.error
+    class: _vm.classes.error,
+    attrs: {
+      "aria-live": "assertive"
+    }
   }, [_vm._v(_vm._s(_vm.errorMessage))]) : _vm._e()]);
 };
 
@@ -651,7 +654,7 @@ var __vue_staticRenderFns__$1 = [];
 
 const __vue_inject_styles__$1 = function (inject) {
   if (!inject) return;
-  inject("data-v-f42f1390_0", {
+  inject("data-v-3023009a_0", {
     source: ".r64__button input:checked{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4a1 1 0 00-1.414-1.414L7 8.586 5.707 7.293z'/%3E%3C/svg%3E\");border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:50%}",
     map: undefined,
     media: undefined
@@ -942,7 +945,10 @@ var __vue_render__$2 = function () {
       "keyup": _vm.onKeyUp
     }
   }, 'input', _vm.$attrs, false)), _vm._v(" "), _vm.hasFeedback ? _c('p', {
-    class: _vm.feedbackClass
+    class: _vm.feedbackClass,
+    attrs: {
+      "aria-live": "assertive"
+    }
   }, [_vm._v("\n    " + _vm._s(_vm.feedback) + "\n  ")]) : _vm._e()]);
 };
 
@@ -1154,7 +1160,10 @@ var __vue_render__$3 = function () {
       "keyup": _vm.onKeyUp
     }
   }, 'textarea', _vm.$attrs, false)), _vm._v(" "), _vm.hasFeedback ? _c('p', {
-    class: _vm.feedbackClass
+    class: _vm.feedbackClass,
+    attrs: {
+      "aria-live": "assertive"
+    }
   }, [_vm._v("\n    " + _vm._s(_vm.feedback) + "\n  ")]) : _vm._e()]);
 };
 
@@ -1266,7 +1275,10 @@ var __vue_render__$4 = function () {
   }, 'input', _vm.$attrs, false)), _vm._v(" "), _c('span', {
     class: _vm.classes.label
   }, [_vm._v(_vm._s(_vm.label))])]), _vm._v(" "), _vm.hasError ? _c('p', {
-    class: _vm.classes.errorMessage
+    class: _vm.classes.errorMessage,
+    attrs: {
+      "aria-live": "assertive"
+    }
   }, [_vm._v(_vm._s(_vm.errorMessage))]) : _vm._e()]);
 };
 
@@ -1275,7 +1287,7 @@ var __vue_staticRenderFns__$4 = [];
 
 const __vue_inject_styles__$4 = function (inject) {
   if (!inject) return;
-  inject("data-v-d3962244_0", {
+  inject("data-v-381b2259_0", {
     source: ".r64__radio input:checked{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='3'/%3E%3C/svg%3E\");border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:50%}",
     map: undefined,
     media: undefined
@@ -1439,7 +1451,10 @@ var __vue_render__$5 = function () {
       }
     }, [_vm._v("\n      " + _vm._s(option.label) + "\n    ")]);
   })], 2), _vm._v(" "), _vm.hasError ? _c('p', {
-    class: _vm.classes.errorMessage
+    class: _vm.classes.errorMessage,
+    attrs: {
+      "aria-live": "assertive"
+    }
   }, [_vm._v(_vm._s(_vm.errorMessage))]) : _vm._e()]);
 };
 
@@ -1448,7 +1463,7 @@ var __vue_staticRenderFns__$5 = [];
 
 const __vue_inject_styles__$5 = function (inject) {
   if (!inject) return;
-  inject("data-v-feb97d56_0", {
+  inject("data-v-10a721d0_0", {
     source: ".r64__select select{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M7 7l3-3 3 3m0 6l-3 3-3-3' stroke='%239fa6b2' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\");background-repeat:no-repeat;background-position:right 1rem center;background-size:1.5em 1.5em}",
     map: undefined,
     media: undefined
