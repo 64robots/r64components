@@ -1,6 +1,6 @@
 <template>
   <div class="r64__textarea" :class="[label ? classes.wrapper : classes.withoutLabel]">
-    <label :for="inputId" :class="classes.label">
+    <label :for="textareaId" :class="classes.label">
       {{ label }}
     </label>
     <textarea

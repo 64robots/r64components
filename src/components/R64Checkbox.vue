@@ -27,6 +27,10 @@ export default {
   mixins: [formInput],
 
   props: {
+    id: {
+      type: String,
+      default: null
+    },
     label: {
       type: String,
       required: true
