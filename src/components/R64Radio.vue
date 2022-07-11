@@ -1,7 +1,8 @@
 <template>
   <div class="r64__radio" :class="classes.wrapper">
-    <label class="inline-flex items-center">
+    <label :for="radioId" class="inline-flex items-center">
       <input
+        id="radioId"
         type="radio"
         v-bind="$attrs"
         :class="formInputClasses"
@@ -27,6 +28,10 @@ export default {
   mixins: [formInput],
 
   props: {
+    id: {
+      type: String,
+      default: null
+    },
     label: {
       type: String,
       required: true
@@ -51,6 +56,14 @@ export default {
   computed: {
     checked() {
       return this.value === this.radioValue
+    },
+
+    radioId() {
+      if (this.id) {
+        return this.id
+      }
+
+      return this._uid
     },
   }
 }

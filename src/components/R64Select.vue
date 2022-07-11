@@ -1,9 +1,10 @@
 <template>
   <div class="r64__select" :class="[classes.wrapper]">
-    <label v-if="label" :class="classes.label">
+    <label v-if="label" :for="selectId" :class="classes.label">
       {{ label }}
     </label>
     <select
+      :id="selectId"
       ref="select"
       v-model="localValue"
       v-bind="$attrs"
@@ -40,6 +41,10 @@ export default {
   mixins: [formInput],
 
   props: {
+    id: {
+      type: String,
+      default: null
+    },
     label: {
       type: String,
       default: null
@@ -71,6 +76,16 @@ export default {
       localValue: this.value,
       rawValue: this.value
     }
+  },
+
+  computed: {
+    selectId() {
+      if (this.id) {
+        return this.id
+      }
+
+      return this._uid
+    },
   },
 
   watch: {
